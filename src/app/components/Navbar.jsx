@@ -7,7 +7,7 @@ import { Button } from "../components/ui/button"
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-b">
+    <nav className="">
       <div className="max-w-7xl mx-auto container">
         <div className="flex justify-between items-center h-16 ">
           {/* Logo - Left Section */}
