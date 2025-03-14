@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import {Link} from 'next-view-transitions'
 import Image from "next/image"
 import { Search, ShoppingBag, ChevronDown } from "lucide-react"
 import { Button } from "../components/ui/button"
@@ -22,10 +22,10 @@ const Navbar = () => {
             <Link href="/" className="py-2 px-3 text-gray-700 hover:text-[#AC8537] font-medium">
               HOME
             </Link>
-            <Link href="/mens" className="py-2 px-3 text-gray-700 hover:text-[#AC8537] font-medium">
+            <Link href="/men" className="py-2 px-3 text-gray-700 hover:text-[#AC8537] font-medium">
               MENS
             </Link>
-            <Link href="/womens" className="py-2 px-3 text-gray-700 hover:text-[#AC8537] font-medium">
+            <Link href="/women" className="py-2 px-3 text-gray-700 hover:text-[#AC8537] font-medium">
               WOMENS
             </Link>
             <Link href="/store" className="py-2 px-3 text-gray-700 hover:text-[#AC8537] font-medium">
