@@ -9,7 +9,7 @@ const products = [
     id: "1",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: "/assets/new_arrivals_1.png",
+    image: "/public/assets/new-arrivals-1.png",
     colors: [
       { color: "Beige", hex: "#F5F5DC", available: true },
       { color: "Orange", hex: "#FFA500", available: true },
@@ -80,7 +80,7 @@ export default function LatestArrivals() {
         {/* H2 in the center with line to the left */}
         <div className="items-center justify-center flex space-x-4 mb-2">
           <hr className="border-[#655656] w-[25%]" />
-          <h2 className="text-5xl w-[75%] flex font-medium text-[#655656] tracking-wider">
+          <h2 className="text-5xl w-[75%] flex font-medium text-[#655656]">
             MEET OUR LATEST ARRIVALS
           </h2>
         </div>

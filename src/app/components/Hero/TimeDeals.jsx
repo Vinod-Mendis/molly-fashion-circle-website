@@ -1,100 +1,100 @@
-import Image from 'next/image';
-import Link from 'next/link';
 
-const TimeDeals = () => {
+
+import Image from "next/image"
+
+export default function TimeDeals() {
   return (
-    <div className="max-w-7xl mx-auto container">
-      {/* Top Banner - Feminine & Flowy */}
-      <div className="relative mb-6 bg-blue-100 rounded-lg overflow-hidden">
-        <div className="p-8 flex items-center justify-between">
-          <div className="z-10">
-            <h2 className="text-4xl font-bold text-white mb-2">
-              FEMININE, FLOWY<br />
-              & ON SALE!
-            </h2>
-            <div className="inline-block bg-white text-black font-medium px-4 py-1 rounded-full mb-4">
-              50% OFF
-            </div>
-            <div>
-              <Link href="/view-all">
-                <button className="bg-amber-700 text-white px-4 py-2 text-sm rounded">View all</button>
-              </Link>
-            </div>
-          </div>
-          <div className="absolute right-0 bottom-0 h-full">
-            <Image 
-              src="/feminine-model.jpg" 
-              alt="Woman in orange flowy outfit" 
-              width={300} 
-              height={400}
-              className="h-full w-auto object-contain"
-            />
-          </div>
+    <div className="container max-w-7xl mx-auto ">
+         <div className="mb-10">
+        {/* H2 in the center with line to the left */}
+        <div className="items-center justify-center flex space-x-4 mb-2">
+        <h2 className="text-5xl font-medium text-[#655656]">
+            LIMITED-TIME DEALS
+          </h2>
+          {/* <div className="h-px bg-black flex-grow"></div> */}
+          
+        </div>
+
+        {/* P with text-right and width control for multiple lines */}
+        <div className="text-left max-w-md mr-auto flex items-center">
+          <p className="text-gray-500  mr-4">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. A consequuntur tenetur consequatur, explicabo in blanditiis molestias dolor impedit distinctio temporibus natus.
+          </p>
+          <hr className="flex-1 border-t border-gray-300" />
         </div>
       </div>
-
-      {/* Bottom Grid - Two Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Denim Refresh Card */}
-        <div className="relative bg-gray-200 rounded-lg overflow-hidden">
-          <div className="p-8 flex items-center justify-between">
-            <div className="z-10">
-              <h2 className="text-4xl font-bold text-white mb-2">
-                DENIM<br />
-                REFRESH
-              </h2>
-              <div className="inline-block bg-white text-black font-medium px-4 py-1 rounded-full mb-4">
-                25% OFF
-              </div>
-              <div>
-                <Link href="/view-all">
-                  <button className="bg-amber-700 text-white px-4 py-2 text-sm rounded">View all</button>
-                </Link>
-              </div>
-            </div>
-            <div className="absolute right-0 bottom-0 h-full">
-              <Image 
-                src="/denim-model.jpg" 
-                alt="Person in denim outfit" 
-                width={250} 
-                height={350}
-                className="h-full w-auto object-contain"
-              />
-            </div>
+      {/* Hero Banner */}
+      <div className="relative w-full h-[300px] mb-6 rounded-lg overflow-hidden bg-sky-100">
+        <div className="absolute inset-0 flex flex-col justify-center p-8 z-10">
+          <h2 className="text-5xl text-white mb-2">FEMININE, FLOWY</h2>
+          <div className="flex space-x-2 items-center">
+            <h2 className="text-5xl text-white mb-2">& ON SALE!</h2>
+            <div className="inline-block bg-white text-[#AF803C] font-medium px-6 py-1 rounded-full">50% OFF</div>
+          </div>
+          <div className="flex items-center gap-4 mt-7">
+            <button className="bg-[#AF803C] text-white px-4 py-2 text-sm rounded">View all</button>
+            <div className="h-px bg-white flex-grow"></div>
           </div>
         </div>
+        <Image
+          src="/assets/deals-1.png"
+          alt="Feminine flowy fashion"
+          fill
+          className="object-contain object-right z-20"
+          priority
+        />
+      </div>
 
-        {/* Cool Styles Card */}
-        <div className="relative bg-green-50 rounded-lg overflow-hidden">
-          <div className="p-8 flex items-center justify-between">
-            <div className="z-10">
-              <h2 className="text-4xl font-bold text-white mb-2 ml-auto text-right">
-                COOL<br />
+      {/* Bottom Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Denim Banner */}
+        <div className="relative h-[350px] rounded-lg overflow-hidden bg-gray-100">
+          <div className="absolute inset-0 flex flex-col justify-center p-8 z-10">
+            <h2 className="text-5xl text-white mb-2">
+              DENIM
+              <br />
+              REFRESH
+            </h2>
+            <div className="inline-block bg-white text-[#AF803C] font-medium px-6 py-1 rounded-full w-fit">25% OFF</div>
+            <div className="flex items-center gap-4 mt-10">
+              <button className="bg-[#AF803C] text-white px-4 py-2 text-sm rounded">View all</button>
+              <div className="h-px bg-white flex-grow"></div>
+            </div>
+          </div>
+          <Image
+            src="/assets/deals-2.png"
+            alt="Denim refresh collection"
+            fill
+            className="object-contain object-right z-20"
+          />
+        </div>
+
+        {/* Cool Styles Banner */}
+        <div className="relative h-[350px] rounded-lg overflow-hidden bg-green-50">
+          <div className="absolute inset-0 flex z-10">
+            {/* Image container on the left */}
+            <div className="relative w-1/2 h-full z-20">
+              <Image src="/assets/deals-3.png" alt="Cool styles collection" fill className="object-contain" />
+            </div>
+            {/* Content container on the right */}
+            <div className="w-1/2 flex flex-col justify-center p-8">
+              <h2 className="text-5xl text-white mb-2 text-right">
+                COOL
+                <br />
                 STYLES!
               </h2>
-              <div className="inline-block bg-white text-black font-medium px-4 py-1 rounded-full mb-4 float-right">
+              <div className="inline-block bg-white text-[#AF803C] font-medium px-6 py-1 rounded-full w-fit ml-auto">
                 25% OFF
               </div>
-              <div className="clear-both flex justify-end">
-                <Link href="/view-all">
-                  <button className="bg-amber-700 text-white px-4 py-2 text-sm rounded">View all</button>
-                </Link>
+              <div className="flex items-center gap-4 mt-10">
+                <div className="h-px bg-white flex-grow"></div>
+                <button className="bg-[#AF803C] text-white px-4 py-2 text-sm rounded">View all</button>
               </div>
-            </div>
-            <div className="absolute left-0 bottom-0 h-full">
-              <Image 
-                src="/cool-style-model.jpg" 
-                alt="Person in green outfit with cap" 
-                width={250} 
-                height={350}
-                className="h-full w-auto object-contain"
-              />
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TimeDeals;
