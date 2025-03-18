@@ -6,8 +6,8 @@ import Marquee from 'react-fast-marquee';
 
 const Footer = () => {
     return (
-      <footer className="bg-[#AC8537]">
-        <div className='max-w-7xl mx-auto container h-[300px]'>
+      <footer className="bg-[#AC8537] rounded-t-4xl">
+        <div className='max-w-7xl mx-auto container h-[300px] pt-5'>
           <div className='h-[20%] flex'>
             <div className="w-[20%]  items-center flex border-r-white border-r border-b border-b-white">
                 <Image src="/assets/logo-white.png" alt="logo" height={20} width={200}/>
@@ -66,12 +66,12 @@ const Footer = () => {
         <div className="h-[20] ml-3 mr-3  bg-white mt-5 rounded-full"></div>
         <div className="w-full text-white py-6 border-t border-t-white mt-5 border-b border-b-white">
                 <div className="overflow-hidden">
-                    <Marquee speed={40} gradient={false} className="overflow-hidden">
-                    <h2 className="text-5xl mx-4 whitespace-nowrap">MOLLY FASHION CIRCLE</h2>
-                    <h2 className="text-5xl whitespace-nowrap">✱</h2>
-                    <h2 className="text-5xl mx-4 whitespace-nowrap">MOLLY FASHION CIRCLE</h2>
-                    <h2 className="text-5xl whitespace-nowrap">✱</h2>
-                    </Marquee>
+                <Marquee speed={40} gradient={false} className="overflow-hidden">
+                    <span className="inline-flex items-center text-5xl">
+                        MOLLY FASHION CIRCLE ✱ MOLLY FASHION CIRCLE ✱ MOLLY FASHION CIRCLE ✱ MOLLY FASHION CIRCLE ✱
+                    </span>
+                </Marquee>
+
                 </div>
         </div>
         <div className=" text-white py-4 px-4  flex justify-between text-xs">
