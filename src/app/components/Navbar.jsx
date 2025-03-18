@@ -8,7 +8,7 @@ import { Button } from "../components/ui/button"
 const Navbar = () => {
   return (
     <nav className="">
-      <div className="max-w-7xl mx-auto container md:px-2">
+      <div className="max-w-7xl mx-auto container md:px-4">
         <div className="flex justify-between items-center h-16 ">
           {/* Logo - Left Section */}
           <div className="flex-shrink-0">
