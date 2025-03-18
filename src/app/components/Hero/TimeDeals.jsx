@@ -19,7 +19,7 @@ export default function TimeDeals() {
         {/* P with text-right and width control for multiple lines */}
         <div className="text-justify mt-4 flex items-center">
         <div className="w-20 h-px bg-[#AC8537] mr-4"></div>
-          <p className=" max-w-md uppercase">
+          <p className=" max-w-md uppercase leading-tight text-sm">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. A consequuntur tenetur consequatur, explicabo in blanditiis molestias dolor impedit distinctio temporibus natus.
           </p>
         </div>
