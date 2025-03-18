@@ -1,7 +1,7 @@
 import Image from "next/image";
-import img1 from "../../../../public/assets/new_arrivals_6.png"; // Replace with actual path
-import img2 from "../../../../public/assets/new_arrivals_4.png"; // Replace with actual path
-import img3 from "../../../../public/assets/new_arrivals_5.png"; // Replace with actual path
+import img1 from "../../../../public/assets/new_arrivals_6.png";
+import img2 from "../../../../public/assets/new_arrivals_4.png"; 
+import img3 from "../../../../public/assets/new_arrivals_5.png"; 
 
 export default function Style() {
   return (
