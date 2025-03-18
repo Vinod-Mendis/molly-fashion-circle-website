@@ -5,7 +5,7 @@ import img3 from "../../../../public/assets/new_arrivals_5.png";
 
 export default function Style() {
   return (
-    <div className="container  h-screen w-full mx-auto flex items-end justify-between relative md:gap-4 md:px-4">
+    <div className="container  h-screen w-full mx-auto flex items-end justify-between relative md:gap-4 md:px-4 2xl:bg-red-400">
     {/* absolute row */}
     <div className="absolute  top-0 flex justify-between items-center w-full gap-10">
       <div className="h-px  w-full "></div>
@@ -33,7 +33,7 @@ export default function Style() {
         Fresh Fits
         <br /> Await
       </h1>
-      <Image src={img3} alt="img1" width={440} height={440}  className="border border-black rounded-md"/>
+      <Image src={img3} alt="img1" width={380} height={380}  className="border border-black rounded-md"/>
     </div>
   </div>
   );

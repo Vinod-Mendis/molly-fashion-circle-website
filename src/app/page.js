@@ -7,7 +7,7 @@ import TimeDeals from "./components/Hero/TimeDeals";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen gap-20">
-      <Intro />
+       <Intro /> 
       <Style />
       <LatestArrivals />
       <TimeDeals />
