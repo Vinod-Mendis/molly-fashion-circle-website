@@ -5,7 +5,7 @@ import img3 from "../../../../public/assets/new_arrivals_5.png"; // Replace with
 
 export default function Style() {
   return (
-    <div className="container  h-screen w-full mx-auto flex items-end justify-between relative md:gap-4 md:px-2">
+    <div className="container  h-screen w-full mx-auto flex items-end justify-between relative md:gap-4 md:px-4">
     {/* absolute row */}
     <div className="absolute  top-0 flex justify-between items-center w-full gap-10">
       <div className="h-px  w-full "></div>
