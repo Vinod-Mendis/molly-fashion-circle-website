@@ -92,11 +92,11 @@ export default function LatestArrivals() {
         </div>
 
         {/* P with text-right and width control for multiple lines */}
-        <div className="max-w-md ml-auto flex items-center space-x-4">
-          <p className="text-justify uppercase leading-tight text-sm">
+        <div className="w-full mt-4 flex items-center justify-end space-x-4">
+          <p className="text-justify uppercase leading-tight text-sm max-w-md">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. A consequuntur tenetur consequatur, explicabo in blanditiis molestias dolor impedit distinctio temporibus natus.
           </p>
-          <hr className="flex-1 border-t-[2px] border-[#655656]" />
+          <hr className="w-[20%] border-t-[2px] border-[#AF803C]" />
         </div>
       </div>
 
