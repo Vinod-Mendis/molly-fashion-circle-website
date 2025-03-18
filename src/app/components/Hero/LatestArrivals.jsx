@@ -3,6 +3,11 @@ import { Button } from "../ui/button"
 import { cn } from "@/lib/utils"
 import { FaBagShopping } from "react-icons/fa6";
 import new1 from "../../../../public/assets/new-arrivals-1.png"
+import new2 from "../../../../public/assets/new_arrivals_2.png"
+import new3 from "../../../../public/assets/new_arrivals_3.png"
+import new4 from "../../../../public/assets/new_arrivals_4.png"
+import new5 from "../../../../public/assets/new_arrivals_5.png"
+import new6 from "../../../../public/assets/new_arrivals_6.png"
 
 // Product data directly in the component file
 const products = [
@@ -21,7 +26,7 @@ const products = [
     id: "2",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: new1,
+    image: new2,
     colors: [
       { color: "Dark Green", hex: "#006400", available: true },
       { color: "Black", hex: "#000000", available: true },
@@ -32,7 +37,7 @@ const products = [
     id: "3",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: new1,
+    image: new3,
     colors: [
       { color: "Cream", hex: "#FFFDD0", available: true },
       { color: "Red", hex: "#FF0000", available: true },
@@ -42,7 +47,7 @@ const products = [
     id: "4",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: new1,
+    image: new4,
     colors: [
       { color: "Turquoise", hex: "#40E0D0", available: true },
       { color: "Blue", hex: "#0000FF", available: true },
@@ -53,7 +58,7 @@ const products = [
     id: "5",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: new1,
+    image: new5,
     colors: [
       { color: "Orange", hex: "#FFA500", available: true },
       { color: "Red", hex: "#FF0000", available: true },
@@ -64,7 +69,7 @@ const products = [
     id: "6",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: new1,
+    image: new6,
     colors: [
       { color: "Red", hex: "#FF0000", available: true },
       { color: "Pink", hex: "#FFC0CB", available: true },
@@ -87,18 +92,18 @@ export default function LatestArrivals() {
         </div>
 
         {/* P with text-right and width control for multiple lines */}
-        <div className="text-right max-w-md ml-auto flex items-center">
-          <p className="text-gray-500  mr-4">
+        <div className="max-w-md ml-auto flex items-center space-x-4">
+          <p className="text-gray-500 text-justify uppercase">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. A consequuntur tenetur consequatur, explicabo in blanditiis molestias dolor impedit distinctio temporibus natus.
           </p>
-          <hr className="flex-1 border-t border-gray-300" />
+          <hr className="flex-1 border-t-[2px] border-[#655656]" />
         </div>
       </div>
 
       {/* Products Grid */}
       <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
-          <div key={product.id} className="group relative bg-white rounded-lg border overflow-hidden h-auto">
+          <div key={product.id} className="group relative bg-white  border-b border-b-black overflow-hidden h-auto">
             {/* Add to Cart Button */}
             <div className="absolute top-2 left-2 z-10">
               <Button size="sm" variant="secondary" className="bg-white hover:bg-gray-100">
@@ -114,7 +119,7 @@ export default function LatestArrivals() {
                 alt={product.name}
                 width={450}
                 height={500}
-                className="object-cover w-full"
+                className="w-full h-[500px] object-cover border border-black rounded-md"
               />
             </div>
 
@@ -128,7 +133,7 @@ export default function LatestArrivals() {
                     <div
                       key={index}
                       className={cn(
-                        "w-4 h-4 rounded-full border-2 border-white ring-1 ring-gray-200",
+                        "w-4 h-4 rounded-md",
                         !color.available && "opacity-50"
                       )}
                       style={{ backgroundColor: color.hex }}
