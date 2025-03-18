@@ -6,8 +6,8 @@ import Marquee from 'react-fast-marquee';
 
 const Footer = () => {
     return (
-      <footer className="bg-[#AC8537] rounded-t-4xl md:px-2">
-        <div className='max-w-7xl mx-auto container h-[300px] pt-5'>
+      <footer className="bg-[#AC8537] rounded-t-4xl">
+        <div className='max-w-7xl mx-auto container h-[300px] pt-5 md:px-2'>
           <div className='h-[20%] flex'>
             <div className="w-[20%]  items-center flex border-r-white border-r border-b border-b-white">
                 <Image src="/assets/logo-white.png" alt="logo" height={20} width={200}/>
