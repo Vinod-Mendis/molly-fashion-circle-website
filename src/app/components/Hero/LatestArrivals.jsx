@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Button } from "../ui/button"
 import { cn } from "@/lib/utils"
 import { FaBagShopping } from "react-icons/fa6";
+import new1 from "../../../../public/assets/new-arrivals-1.png"
 
 // Product data directly in the component file
 const products = [
@@ -9,7 +10,7 @@ const products = [
     id: "1",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: "/public/assets/new-arrivals-1.png",
+    image: new1,
     colors: [
       { color: "Beige", hex: "#F5F5DC", available: true },
       { color: "Orange", hex: "#FFA500", available: true },
@@ -20,7 +21,7 @@ const products = [
     id: "2",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: "/placeholder.svg?height=600&width=450",
+    image: new1,
     colors: [
       { color: "Dark Green", hex: "#006400", available: true },
       { color: "Black", hex: "#000000", available: true },
@@ -31,7 +32,7 @@ const products = [
     id: "3",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: "/placeholder.svg?height=600&width=450",
+    image: new1,
     colors: [
       { color: "Cream", hex: "#FFFDD0", available: true },
       { color: "Red", hex: "#FF0000", available: true },
@@ -41,7 +42,7 @@ const products = [
     id: "4",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: "/placeholder.svg?height=600&width=450",
+    image: new1,
     colors: [
       { color: "Turquoise", hex: "#40E0D0", available: true },
       { color: "Blue", hex: "#0000FF", available: true },
@@ -52,7 +53,7 @@ const products = [
     id: "5",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: "/placeholder.svg?height=600&width=450",
+    image: new1,
     colors: [
       { color: "Orange", hex: "#FFA500", available: true },
       { color: "Red", hex: "#FF0000", available: true },
@@ -63,7 +64,7 @@ const products = [
     id: "6",
     name: "Midnight Vogue Dress",
     price: 4990.0,
-    image: "/placeholder.svg?height=600&width=450",
+    image: new1,
     colors: [
       { color: "Red", hex: "#FF0000", available: true },
       { color: "Pink", hex: "#FFC0CB", available: true },
