@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function TimeDeals() {
   return (
-    <div className="container max-w-7xl mx-auto ">
+    <div className="container max-w-7xl mx-auto md:px-2">
          <div className="mb-10">
         {/* H2 in the center with line to the left */}
         <div className="items-center justify-center flex mb-2">

@@ -80,7 +80,7 @@ const products = [
 
 export default function LatestArrivals() {
   return (
-    <div className="mx-auto max-w-7xl container py-12">
+    <div className="mx-auto max-w-7xl container py-12 md:px-2">
       {/* Heading Section */}
       <div className="mb-10">
         {/* H2 in the center with line to the left */}
