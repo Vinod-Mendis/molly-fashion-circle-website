@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Intro() {
   return (
-    <div className="w-screen h-screen relative">
+    <div className="h-screen relative overflow-hidden rounded-b-4xl">
       {/* Background Image */}
       <Image
         src="/assets/hero-bg.png"
