@@ -5,7 +5,7 @@ import img3 from "../../../../public/assets/new_arrivals_5.png";
 
 export default function Style() {
   return (
-    <div className="container  h-screen w-full mx-auto flex items-end justify-between relative md:gap-4 md:px-4">
+    <div className="container h-screen max-w-7xl mx-auto flex items-end justify-between relative md:gap-4 md:px-4">
     {/* absolute row */}
     <div className="absolute  top-0 flex justify-between items-center w-full gap-10">
       <div className="h-px  w-full "></div>
@@ -17,15 +17,15 @@ export default function Style() {
         Shop the
         <br /> Latest Trends
       </h1>
-      <Image src={img1} alt="img1" width={560} height={560} className="border border-black rounded-md" />
+      <Image src={img1} alt="img1" width={440} height={440} className="border border-black rounded-md" />
     </div>
     {/* col 2 */}
-    <div className="flex flex-col gap-4  w-fit h-fit">
+    <div className="flex flex-col gap-4 w-fit h-fit">
       <h1 className="text-5xl font-extralight uppercase px-2">
         Find Your
         <br /> Perfect Look
       </h1>
-      <Image src={img2} alt="img1" width={460} height={460} className="border border-black rounded-md" />
+      <Image src={img2} alt="img1" width={400} height={380} className="border border-black rounded-md" />
     </div>
     {/* col 3 */}
     <div className="flex flex-col gap-4  w-fit h-fit">
@@ -33,7 +33,7 @@ export default function Style() {
         Fresh Fits
         <br /> Await
       </h1>
-      <Image src={img3} alt="img1" width={380} height={380}  className="border border-black rounded-md"/>
+      <Image src={img3} alt="img1" width={330} height={330}  className="border border-black rounded-md"/>
     </div>
   </div>
   );
