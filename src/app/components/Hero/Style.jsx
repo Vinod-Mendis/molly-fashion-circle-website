@@ -17,7 +17,7 @@ export default function Style() {
         Shop the
         <br /> Latest Trends
       </h1>
-      <Image src={img1} alt="img1" width={440} height={440} className="border border-black rounded-md" />
+      <Image src={img1} alt="img1" width={560} height={560} className="border border-black rounded-md" />
     </div>
     {/* col 2 */}
     <div className="flex flex-col gap-4 w-fit h-fit">
@@ -25,7 +25,7 @@ export default function Style() {
         Find Your
         <br /> Perfect Look
       </h1>
-      <Image src={img2} alt="img1" width={400} height={380} className="border border-black rounded-md" />
+      <Image src={img2} alt="img1" width={460} height={460} className="border border-black rounded-md" />
     </div>
     {/* col 3 */}
     <div className="flex flex-col gap-4  w-fit h-fit">
@@ -33,7 +33,7 @@ export default function Style() {
         Fresh Fits
         <br /> Await
       </h1>
-      <Image src={img3} alt="img1" width={330} height={330}  className="border border-black rounded-md"/>
+      <Image src={img3} alt="img1" width={380} height={380}  className="border border-black rounded-md"/>
     </div>
   </div>
   );
