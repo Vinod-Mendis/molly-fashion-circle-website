@@ -1,3 +1,4 @@
+
 import Image from "next/image"
 import { Button } from "../ui/button"
 import { cn } from "@/lib/utils"
@@ -9,12 +10,13 @@ import new4 from "../../../../public/assets/new_arrivals_4.png"
 import new5 from "../../../../public/assets/new_arrivals_5.png"
 import new6 from "../../../../public/assets/new_arrivals_6.png"
 
-// Product data directly in the component file
+
 const products = [
   {
     id: "1",
     name: "Midnight Vogue Dress",
     price: 4990.0,
+    originalPrice: 5990.0,
     image: new1,
     colors: [
       { color: "Beige", hex: "#F5F5DC", available: true },
@@ -26,6 +28,7 @@ const products = [
     id: "2",
     name: "Midnight Vogue Dress",
     price: 4990.0,
+    originalPrice: 5990.0,
     image: new2,
     colors: [
       { color: "Dark Green", hex: "#006400", available: true },
@@ -37,6 +40,7 @@ const products = [
     id: "3",
     name: "Midnight Vogue Dress",
     price: 4990.0,
+    originalPrice: 5990.0,
     image: new3,
     colors: [
       { color: "Cream", hex: "#FFFDD0", available: true },
@@ -47,6 +51,7 @@ const products = [
     id: "4",
     name: "Midnight Vogue Dress",
     price: 4990.0,
+    originalPrice: 5990.0,
     image: new4,
     colors: [
       { color: "Turquoise", hex: "#40E0D0", available: true },
@@ -58,6 +63,7 @@ const products = [
     id: "5",
     name: "Midnight Vogue Dress",
     price: 4990.0,
+    originalPrice: 5990.0,
     image: new5,
     colors: [
       { color: "Orange", hex: "#FFA500", available: true },
@@ -69,6 +75,7 @@ const products = [
     id: "6",
     name: "Midnight Vogue Dress",
     price: 4990.0,
+    originalPrice: 5990.0,
     image: new6,
     colors: [
       { color: "Red", hex: "#FF0000", available: true },
@@ -103,10 +110,10 @@ export default function LatestArrivals() {
       {/* Products Grid */}
       <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
-          <div key={product.id} className="group relative bg-white  border-b border-b-black overflow-hidden h-auto">
+          <div key={product.id} className="group relative bg-white border-b border-b-black overflow-hidden h-auto">
             {/* Add to Cart Button */}
             <div className="absolute top-2 left-2 z-10">
-              <Button size="sm" variant="secondary" className="bg-white hover:bg-gray-100">
+              <Button size="sm" variant="secondary" className="bg-white hover:bg-gray-100 cursor-pointer">
                 Add to Cart
                 <FaBagShopping className="ml-2" />
               </Button>
@@ -125,26 +132,35 @@ export default function LatestArrivals() {
 
             {/* Product Info */}
             <div className="p-4">
-              <h3 className="text-sm font-medium text-gray-900">{product.name}</h3>
+              <h3 className="text-sm text-gray-900">{product.name}</h3>
               <div className="mt-1 flex items-center justify-between">
-                <p className="text-sm text-gray-500">LKR {product.price.toFixed(2)}</p>
-                <div className="flex gap-1">
-                  {product.colors.map((color, index) => (
-                    <div
-                      key={index}
-                      className={cn(
-                        "w-4 h-4 rounded-md",
-                        !color.available && "opacity-50"
-                      )}
-                      style={{ backgroundColor: color.hex }}
-                      title={color.color}
-                    />
-                  ))}
+                <div className="flex items-center justify-center space-x-4">
+                  <p className="text-lg font-semibold text-black">LKR {product.price.toFixed(2)}</p>
+                  <p className="text-sm text-gray-400 line-through ">{product.originalPrice.toFixed(2)}</p>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-px h-6 bg-black mx-4"></div> {/* Vertical line */}
+                  <div className="flex gap-3"> 
+                    {product.colors.map((color, index) => (
+                      <div
+                        key={index}
+                        className={cn(
+                          "w-4 h-4 rounded-full", 
+                          !color.available && "opacity-50"
+                        )}
+                        style={{ backgroundColor: color.hex }}
+                        title={color.color}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         ))}
+      </div>
+      <div className="justify-center flex items-center mt-20">
+          <button className="border-[#AF803C] border bg-white text-[#AF803C] px-6 py-3 text-sm rounded cursor-pointer">View all</button>
       </div>
     </div>
   )
