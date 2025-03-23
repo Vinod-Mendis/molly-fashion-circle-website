@@ -14,14 +14,20 @@ export default function Style() {
               ENCHANTING STYLES
             </h2>
         </div>
-        {/* <div className="h-10 w-[1px] bg-[#655656] mx-auto"></div> */}
+        {/* <div className="h-20 w-[1px] bg-[#655656] mx-auto"></div>  */}
     </div>
     
     <div className="container h-fit max-w-7xl mx-auto flex items-end justify-between relative md:gap-4 md:px-4">
       {/* absolute row */}
       <div className="absolute top-0 flex justify-between items-center w-full gap-10">
         <div className="h-px w-full"></div>
-        <div className="h-px bg-black w-full"></div>
+        <h1 className="max-w-sm uppercase text-justify  leading-tight text-xs">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam
+        </h1>
+        <div className="h-px bg-black w-full">
+        </div>
       </div>
       
       {/* col 1 */}
@@ -34,11 +40,11 @@ export default function Style() {
           src={img1}
           alt="img1"
           width={560} 
-          height={560}
+          height={650}
           className="border border-black rounded-md 
                      
                      md:w-[400px] md:h-[400px] 
-                     lg:w-[560px] lg:h-[560px]" 
+                     lg:w-[450px] lg:h-[650px]" 
         />
       </div>
 
@@ -52,10 +58,10 @@ export default function Style() {
           src={img2}
           alt="img2"
           width={460}
-          height={460}
+          height={500}
           className="border border-black rounded-md
                      md:w-[300px] md:h-[300px] 
-                     lg:w-[460px] lg:h-[460px]"
+                     lg:w-[400px] lg:h-[550px]"
         />
       </div>
 
@@ -69,10 +75,10 @@ export default function Style() {
           src={img3}
           alt="img3"
           width={340}
-          height={340}
+          height={400}
           className="border border-black rounded-md 
-                     md:w-[300px] md:h-[300px] 
-                     lg:w-[340px] lg:h-[340px]"
+                     md:w-[250px] md:h-[250px] 
+                     lg:w-[350px] lg:h-[450px]"
         />
       </div>
     </div>
