@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 
 export default function TimeDeals() {
@@ -17,9 +16,14 @@ export default function TimeDeals() {
         {/* P  */}
         <div className="text-justify mt-4 flex items-center">
           <div className="w-20 h-px bg-[#AC8537] mr-4"></div>
-          <p className="max-w-md uppercase leading-tight text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-          </p>
+          <div className="grid grid-rows-2 w-full">
+            <p className="uppercase leading-tight text-sm">
+              LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT. SED DO EIUSMOD TEMPOR
+            </p>
+            <p className="uppercase leading-tight text-sm">
+              INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT ENIM AD MINIM VENIAM
+            </p>
+          </div>
         </div>
       </div>
 
