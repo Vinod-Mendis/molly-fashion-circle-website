@@ -6,20 +6,23 @@ import img3 from "../../../../public/assets/new_arrivals_5.png";
 
 export default function Style() {
   return (
-    <>
-    <div className="mx-auto max-w-7xl container md:px-4">
+    <div>
+    <div className="mx-auto max-w-7xl container md:px-4 ">
         <div className="items-center justify-center flex space-x-4 mb-2">
             <hr className="border-[#655656] w-[25%]" />
             <h2 className="text-5xl w-[75%] flex font-medium text-[#655656]">
               ENCHANTING STYLES
             </h2>
         </div>
-        {/* <div className="h-20 w-[1px] bg-[#655656] mx-auto"></div>  */}
+    </div>
+    <div className="h-10 flex mx-auto max-w-7xl container mb-2">
+      <div className="w-[50%] border-r border-r-black"></div>
+      <div className="w-[50%]"></div>
     </div>
     
-    <div className="container h-fit max-w-7xl mx-auto flex items-end justify-between relative md:gap-4 md:px-4">
+    <div className="container h-fit max-w-7xl mx-auto flex items-end justify-between relative md:gap-4 md:px-4 ">
       {/* absolute row */}
-      <div className="absolute top-0 flex justify-between items-center w-full gap-10">
+      <div className="absolute top-0 flex justify-between items-center w-full gap-2">
         <div className="h-px w-full"></div>
         <h1 className="max-w-sm uppercase text-justify  leading-tight text-xs">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -82,8 +85,9 @@ export default function Style() {
         />
       </div>
     </div>
+    </div>
     
-    </>
+    
     
   );
 }
