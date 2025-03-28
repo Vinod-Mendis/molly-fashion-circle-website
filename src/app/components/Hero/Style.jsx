@@ -24,11 +24,11 @@ export default function Style() {
       {/* absolute row */}
       <div className="absolute top-0 flex justify-between items-center w-full gap-2">
         <div className="h-px w-full"></div>
-        <h1 className="max-w-sm uppercase text-justify  leading-tight text-xs">
+        <p className="max-w-sm uppercase text-justify  leading-tight text-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam
-        </h1>
+        </p>
         <div className="h-px bg-black w-full">
         </div>
       </div>

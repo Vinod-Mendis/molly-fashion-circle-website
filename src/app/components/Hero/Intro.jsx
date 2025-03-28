@@ -20,14 +20,14 @@ export default function Intro() {
               <h1 className="text-5xl  whitespace-nowrap">SHOP HASSLE-FREE</h1>
             </div>
             <div className="flex-grow">
-              <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labo</p>
+              <p className="text-sm text-justify uppercase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labo</p>
             </div>
           </div>
           
           {/* Bottom row */}
           <div className="flex">
             <div className="flex-grow mr-8">
-              <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+              <p className="text-sm text-justify uppercase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
             <div className="flex-shrink-0">
               <h1 className="text-5xl  whitespace-nowrap">LOOK STUNNING</h1>
