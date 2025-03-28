@@ -28,35 +28,35 @@ const Footer = () => {
                 <p className="text-xs block"> incididunt ut labore et dolore magna </p>
                 <p className="text-xs block">aliqua.Ut enim ad minim veniam.</p>
                 <div className="mt-14">
-                    <Link href="/" className=" text-white hover:text-amber-600 flex items-center gap-3">
+                    <Link href="/" className=" text-white hover:text-[#201b11] flex items-center gap-3">
                         <RiInstagramFill className="h-6 w-6" />
                         <p className="text-xs">INSTAGRAM</p>
                     </Link>
                 </div>
                 <div className="mt-2">
-                    <Link href="/" className=" text-white hover:text-amber-600 flex items-center gap-3">
+                    <Link href="/" className=" text-white hover:text-[#201b11] flex items-center gap-3">
                         <IoLogoFacebook className="h-6 w-6"/>
                         <p className="text-xs">FACEBOOK</p>
                     </Link>
                 </div>
             </div>
             <div className="w-[20%] border-l border-l-white pl-8 flex flex-col space-y-4">
-                <Link href="/" className=" text-white hover:text-amber-600 mt-4">
+                <Link href="/" className=" text-white hover:text-[#201b11] mt-4">
                     HOME
                 </Link>
-                <Link href="/men" className=" text-white hover:text-amber-600">
+                <Link href="/men" className=" text-white hover:text-[#201b11]">
                     MENS
                 </Link>
-                <Link href="/women" className=" text-white hover:text-amber-600">
+                <Link href="/women" className=" text-white hover:text-[#201b11]">
                     WOMENS
                 </Link>
-                <Link href="/store" className=" text-white hover:text-amber-600">
+                <Link href="/store" className=" text-white hover:text-[#201b11]">
                     STORE
                 </Link>
-                <Link href="/new-arrivals" className=" text-white hover:text-amber-600">
+                <Link href="/new-arrivals" className=" text-white hover:text-[#201b11]">
                     NEW ARRIVALS
                 </Link>
-                <Link href="/contact" className=" text-white hover:text-amber-600">
+                <Link href="/contact" className=" text-white hover:text-[#201b11]">
                     CONTACT US
                 </Link>
             </div>
