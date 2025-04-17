@@ -1,8 +1,11 @@
+/** @format */
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { ViewTransitions } from "next-view-transitions";
 import Footer from "./components/Footer";
+import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,16 +26,15 @@ export default function RootLayout({ children }) {
   return (
     <ViewTransitions>
       <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        <main className="mb-20">{children}</main>
-        <Footer />
-      </body>
-    </html>
-
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <SmoothScrollWrapper>
+            <Navbar />
+            <main className="mb-20">{children}</main>
+            <Footer />
+          </SmoothScrollWrapper>
+        </body>
+      </html>
     </ViewTransitions>
-    
   );
 }
