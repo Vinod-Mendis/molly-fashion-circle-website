@@ -1,31 +1,33 @@
-/** @format */
 
-import { ImPhone } from "react-icons/im";
-import { MdEmail } from "react-icons/md";
-import { FaFax } from "react-icons/fa";
 import Image from "next/image";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/button";
+import { Label } from "../ui/label";
+import { Card, CardContent } from "../ui/card";
 
 export default function ContactUsHero() {
   return (
     <div className="mx-auto max-w-7xl container md:px-4 relative">
-      {/* Right image section  */}
-      <div className="absolute right-0 top-0 w-[40%] h-full z-20">
-        <div className="relative w-full h-full">
-          <Image
-            src="/assets/contactus.png"
-            alt="Fashion model"
-            fill
-            style={{
-              objectFit: "contain",
-              objectPosition: "top right",
-            }}
-            priority
-          />
-        </div>
+      {/* Model image positioned at the top right */}
+      <div className="absolute top-20 right-0 w-[45%] h-full z-20">
+        <Image
+          src="/images/contact-us-page/model-2.png"
+          alt="Fashion model"
+          height={550}
+          width={450}
+          className="object-contain border border-transparent"
+          style={{
+            position: "absolute",
+            top: "0",
+            right: "0",
+          }}
+          priority
+        />
       </div>
 
       {/* Heading */}
-      <div className="flex flex-row mt-14 relative z-10">
+      <div className="flex flex-row mt-24 relative z-10">
         <div className="w-[40%]">
           <h1 className="uppercase text-7xl">contact us</h1>
         </div>
@@ -36,7 +38,7 @@ export default function ContactUsHero() {
 
       {/* Content and form */}
       <div className="flex">
-        <div className="w-[60%]  relative z-10">
+        <div className="w-[60%] relative z-10">
           {/* content-para*/}
           <div className="mt-2 w-[80%]">
             <p className="uppercase text-xs max-w-md text-[#888888]">
@@ -45,40 +47,51 @@ export default function ContactUsHero() {
               enim ad minim veniam
             </p>
           </div>
+
           {/* contact info */}
           <div className="mt-20 relative pl-8">
             {/* Phone section */}
             <div className="flex relative">
               <div className="absolute -left-8">
-                <ImPhone size={15} color="#A27D2A" />
+                <Image
+                  src="/images/contact-us-page/phone.png"
+                  alt="phone"
+                  height={15}
+                  width={15}
+                />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">
                   PHONE
                 </div>
-                <div className="text-sm">0912345678</div>
-                <div className="text-sm">0917654321</div>
+                <div className="text-base">0912345678</div>
+                <div className="text-base">0917654321</div>
               </div>
               {/* Vertical line */}
-              <div className="absolute left-2.5 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
+              <div className="absolute left-3 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
             </div>
 
             {/* Gap between phone and email */}
-            <div className="h-15"></div>
+            <div className="h-12"></div>
 
             {/* Email section */}
             <div className="flex relative">
               <div className="absolute -left-8">
-                <MdEmail size={15} color="#A27D2A" />
+                <Image
+                  src="/images/contact-us-page/email.png"
+                  alt="email"
+                  height={15}
+                  width={15}
+                />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">
                   EMAIL
                 </div>
-                <div className="text-sm">mollyfashioncircle@gmail.com</div>
+                <div className="text-base">mollyfashioncircle@gmail.com</div>
               </div>
               {/* Vertical line */}
-              <div className="absolute left-2.5 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
+              <div className="absolute left-3 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
             </div>
 
             {/* Gap between email and fax */}
@@ -87,52 +100,79 @@ export default function ContactUsHero() {
             {/* Fax section */}
             <div className="flex relative">
               <div className="absolute -left-8">
-                <FaFax size={15} color="#A27D2A" />
+                <Image
+                  src="/images/contact-us-page/fax.png"
+                  alt="fax"
+                  height={18}
+                  width={18}
+                />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">FAX</div>
-                <div className="text-sm">0912345678</div>
-                <div className="text-sm">0912345678</div>
+                <div className="text-base">0912345678</div>
+                <div className="text-base">0912345678</div>
               </div>
             </div>
           </div>
-          {/*Question section*/}
+
+          {/* Question section */}
           <div className="mt-20 pb-16">
             <h2 className="text-5xl">Got Style Questions?</h2>
             <h2 className="text-5xl mb-6">Drop Us a Hello!</h2>
 
-            <form className="space-y-4 max-w-md mt-20">
-              <div>
-                <label className="block text-xs uppercase mb-1">Name</label>
-                <input
-                  type="text"
-                  className="w-full bg-gray-100  border-2 border-gray-200 p-2 rounded"
-                />
-              </div>
-              <div>
-                <label className="block text-xs uppercase mb-1">Email</label>
-                <input
-                  type="email"
-                  className="w-full bg-gray-100 border-2 border-gray-200 p-2 rounded"
-                />
-              </div>
-              <div>
-                <label className="block text-xs uppercase mb-1">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  className="w-full bg-gray-100 border-2 border-gray-200 p-2 rounded"
-                />
-              </div>
-              <div>
-                <label className="block text-xs uppercase mb-1">Message</label>
-                <textarea className="w-full bg-gray-100 p-2 border-2 border-gray-200 rounded h-24"></textarea>
-              </div>
-              <button className="bg-[#AF803C] text-white px-8 py-3 text-sm rounded cursor-pointer whitespace-nowrap">
-                Send
-              </button>
-            </form>
+            <Card className="max-w-md mt-16 border-0 shadow-none">
+              <CardContent className="p-0 space-y-6">
+                <form className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-xs uppercase">
+                      Name
+                    </Label>
+                    <Input
+                      id="name"
+                      type="text"
+                      className="bg-gray-100 border-2 border-gray-200"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-xs uppercase">
+                      Email
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      className="bg-gray-100 border-2 border-gray-200"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-xs uppercase">
+                      Phone Number
+                    </Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      className="bg-gray-100 border-2 border-gray-200"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="text-xs uppercase">
+                      Message
+                    </Label>
+                    <Textarea
+                      id="message"
+                      className="bg-gray-100 border-2 border-gray-200 h-32"
+                    />
+                  </div>
+
+                  <Button>Send</Button>
+                  <div className="relative">
+                    <div className="absolute left-10 h-24 border-l border-[#DDDDDD]"></div>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

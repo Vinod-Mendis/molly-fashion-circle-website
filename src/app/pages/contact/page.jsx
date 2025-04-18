@@ -5,7 +5,7 @@ import LocationSection from "../../components/contact-us/LocationSection";
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen gap-20">
+    <div className="flex flex-col min-h-screen">
       <ContactUsHero />
       <LocationSection />
     </div>
