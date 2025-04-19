@@ -20,7 +20,7 @@ export default function Page() {
         alt="Form background shadow"
         width={600}
         height={600}
-        className="rotate-180 absolute left-0 top-60"
+        className="rotate-180 absolute left-0 top-150"
         priority
       />
 
