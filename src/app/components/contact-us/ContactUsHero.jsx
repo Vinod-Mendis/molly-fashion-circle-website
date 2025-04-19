@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
@@ -10,7 +9,7 @@ export default function ContactUsHero() {
   return (
     <div className="mx-auto max-w-7xl container md:px-4 relative">
       {/* Model image positioned at the top right */}
-      <div className="absolute top-20 right-0 w-[45%] h-full z-20">
+      <div className="absolute top-24 right-0 w-[45%] h-full z-20">
         <Image
           src="/images/contact-us-page/model-2.png"
           alt="Fashion model"
@@ -27,7 +26,7 @@ export default function ContactUsHero() {
       </div>
 
       {/* Heading */}
-      <div className="flex flex-row mt-24 relative z-10">
+      <div className="flex flex-row mt-32 relative z-10">
         <div className="w-[40%]">
           <h1 className="uppercase text-7xl">contact us</h1>
         </div>
@@ -56,19 +55,19 @@ export default function ContactUsHero() {
                 <Image
                   src="/images/contact-us-page/phone.png"
                   alt="phone"
-                  height={15}
-                  width={15}
+                  height={20}
+                  width={20}
                 />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">
                   PHONE
                 </div>
-                <div className="text-base">0912345678</div>
-                <div className="text-base">0917654321</div>
+                <div className="text-lg">0912345678</div>
+                <div className="text-lg">0917654321</div>
               </div>
               {/* Vertical line */}
-              <div className="absolute left-3 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
+              <div className="absolute left-4 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
             </div>
 
             {/* Gap between phone and email */}
@@ -80,18 +79,18 @@ export default function ContactUsHero() {
                 <Image
                   src="/images/contact-us-page/email.png"
                   alt="email"
-                  height={15}
-                  width={15}
+                  height={20}
+                  width={20}
                 />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">
                   EMAIL
                 </div>
-                <div className="text-base">mollyfashioncircle@gmail.com</div>
+                <div className="text-lg">mollyfashioncircle@gmail.com</div>
               </div>
               {/* Vertical line */}
-              <div className="absolute left-3 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
+              <div className="absolute left-4 -translate-x-10 top-7 h-20 border-l border-[#DDDDDD]"></div>
             </div>
 
             {/* Gap between email and fax */}
@@ -103,14 +102,14 @@ export default function ContactUsHero() {
                 <Image
                   src="/images/contact-us-page/fax.png"
                   alt="fax"
-                  height={18}
-                  width={18}
+                  height={22}
+                  width={22}
                 />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">FAX</div>
-                <div className="text-base">0912345678</div>
-                <div className="text-base">0912345678</div>
+                <div className="text-lg">0912345678</div>
+                <div className="text-lg">0912345678</div>
               </div>
             </div>
           </div>
