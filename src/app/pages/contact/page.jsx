@@ -6,7 +6,7 @@ import LocationSection from "../../components/contact-us/LocationSection";
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       <ContactUsHero />
       <div className="absolute -left-44 2xl:-left-200 top-[730px]  2xl:w-[2000px] 2xl:h-[1000px] w-[800px] h-[800px] lg:z-10 2xl:z-0 rotate-180">
                   <Image
@@ -34,7 +34,7 @@ export default function Page() {
                     className="object-contain"
                     priority
                   />
-                </div>
+                </div> 
       <LocationSection />
     </div>
   );
