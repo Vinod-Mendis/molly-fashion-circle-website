@@ -7,7 +7,7 @@ import { Card, CardContent } from "../ui/card";
 
 export default function ContactUsHero() {
   return (
-    <div className="mx-auto max-w-7xl container md:px-4 relative">
+    <div className="mx-auto max-w-7xl container md:px-4 relative z-40">
       {/* Model image positioned at the top right */}
       <div className="absolute top-24 right-0 w-[45%] h-full z-20">
         <Image

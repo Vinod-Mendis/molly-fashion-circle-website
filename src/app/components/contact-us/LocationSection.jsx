@@ -43,7 +43,7 @@ export default function LocationSection() {
                 <FaMapMarkerAlt className="mr-2" />
                 <span className="text-xs uppercase">{branch.name}</span>
               </div>
-
+              
               {/* Address Block */}
               <div className="text-black">
                 <p className="font-semibold text-xl md:text-2xl">
@@ -59,7 +59,7 @@ export default function LocationSection() {
             </div>
           ))}
         </div>
-
+        
         {/* Map Section */}
         <div className="w-full">
           <div className="h-[500px] rounded-lg overflow-hidden">
