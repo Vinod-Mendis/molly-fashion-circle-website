@@ -32,7 +32,7 @@ export default function Page() {
         className="absolute bottom-50 right-0"
       />
       <ContactUsHero />
-      <div className="relative z-20">
+      <div className="relative z-50">
         <LocationSection />
       </div>
     </div>

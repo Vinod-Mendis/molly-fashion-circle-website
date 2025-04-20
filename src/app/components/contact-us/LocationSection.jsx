@@ -1,65 +1,18 @@
-import { FaMapMarkerAlt } from "react-icons/fa";
+import Branch1 from "./Branch1";
+import Branch2 from "./Branch2";
+import Branch3 from "./Branch3";
 
 export default function LocationSection() {
-  const branches = [
-    {
-      id: 0,
-      name: "branch 01",
-      address: {
-        line1: "No.64, Thissa Mawatha,",
-        line2: "Kuliyapitiya,",
-        line3: "Sri Lanka",
-      },
-    },
-    {
-      id: 1,
-      name: "branch 02",
-      address: {
-        line1: "No.64, Thissa Mawatha,",
-        line2: "Kuliyapitiya,",
-        line3: "Sri Lanka",
-      },
-    },
-    {
-      id: 2,
-      name: "branch 03",
-      address: {
-        line1: "No.64, Thissa Mawatha,",
-        line2: "Kuliyapitiya,",
-        line3: "Sri Lanka",
-      },
-    },
-  ];
-
   return (
     <div className="max-w-7xl mx-auto container mt-4">
       <div className="flex flex-col gap-8">
         {/* Address Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {branches.map((branch) => (
-            <div key={branch.id} className="">
-              {/* Branch Header */}
-              <div className="flex items-center mb-2 text-[#CDCDCD]">
-                <FaMapMarkerAlt className="mr-2" />
-                <span className="text-xs uppercase">{branch.name}</span>
-              </div>
-              
-              {/* Address Block */}
-              <div className="text-black">
-                <p className="font-semibold text-xl md:text-2xl">
-                  {branch.address.line1}
-                </p>
-                <p className="font-semibold text-xl md:text-2xl">
-                  {branch.address.line2}
-                </p>
-                <p className="font-semibold text-xl md:text-2xl">
-                  {branch.address.line3}
-                </p>
-              </div>
-            </div>
-          ))}
+          <Branch1 />
+          <Branch2 />
+          <Branch3 />
         </div>
-        
+
         {/* Map Section */}
         <div className="w-full">
           <div className="h-[500px] rounded-lg overflow-hidden">
