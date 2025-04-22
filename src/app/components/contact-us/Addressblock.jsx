@@ -14,7 +14,7 @@ export default function Addressblock({ branchNumber, no, street, town }) {
 
       {/* Address Block */}
       <div className="text-black">
-        {/* First Line: Number and Street */}
+        {/* Number and Street */}
         <div className="flex flex-wrap">
           <AddressItem text={no} dialogueText="Number" />
           <AddressItem text={street} dialogueText="Street" />
@@ -25,7 +25,7 @@ export default function Addressblock({ branchNumber, no, street, town }) {
           <AddressItem text={town} dialogueText="Town" />
         </div>
 
-        {/* Country (hardcoded as mentioned in requirements) */}
+        {/* Country*/}
         <div className="flex flex-wrap mt-1">
           <AddressItem text="Sri Lanka" dialogueText="Country" comma={false} />
         </div>

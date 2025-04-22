@@ -1,16 +1,46 @@
-import Branch1 from "./Branch1";
-import Branch2 from "./Branch2";
-import Branch3 from "./Branch3";
+"use client";
+
+import Addressblock from "./Addressblock";
 
 export default function LocationSection() {
+  const branches = [
+    {
+      id: 1,
+      branchNumber: "01",
+      no: "No.64",
+      street: "Thissa Mawatha",
+      town: "Kuliyapitiya",
+    },
+    {
+      id: 2,
+      branchNumber: "02",
+      no: "No.64",
+      street: "Thissa Mawatha",
+      town: "Kuliyapitiya",
+    },
+    {
+      id: 3,
+      branchNumber: "03",
+      no: "No.64",
+      street: "Thissa Mawatha",
+      town: "Kuliyapitiya",
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto container mt-4">
       <div className="flex flex-col gap-8">
-        {/* Address Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Branch1 />
-          <Branch2 />
-          <Branch3 />
+        {/* Address Section  */}
+        <div className="flex flex-col md:flex-row justify-between w-full gap-4">
+          {branches.map((branch) => (
+            <Addressblock
+              key={branch.id}
+              branchNumber={branch.branchNumber}
+              no={branch.no}
+              street={branch.street}
+              town={branch.town}
+            />
+          ))}
         </div>
 
         {/* Map Section */}

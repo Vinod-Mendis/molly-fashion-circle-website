@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-// Component for individual address items with hover tooltip
-export default function Hovereffect({ text, dialogueText, comma = true }) {
+export default function AddressItem({ text, dialogueText, comma = true }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -13,7 +12,8 @@ export default function Hovereffect({ text, dialogueText, comma = true }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {text}{comma ? "," : ""}
+        {text}
+        {comma ? "," : ""}
       </p>
       {isHovered && (
         <div className="absolute -top-8 left-2">
