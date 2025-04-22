@@ -44,7 +44,7 @@ export default function StylesSection() {
             alt="img1"
             width={560}
             height={650}
-            className="border border-black rounded-md md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[650px]"
+            className="border border-black rounded-md"
           />
         </div>
 
@@ -59,7 +59,7 @@ export default function StylesSection() {
             alt="img2"
             width={460}
             height={500}
-            className="border border-black rounded-md md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[550px]"
+            className="border border-black rounded-md"
           />
         </div>
 
@@ -74,7 +74,7 @@ export default function StylesSection() {
             alt="img3"
             width={340}
             height={400}
-            className="border border-black rounded-md md:w-[250px] md:h-[250px] lg:w-[350px] lg:h-[450px]"
+            className="border border-black rounded-md"
           />
         </div>
       </div>
