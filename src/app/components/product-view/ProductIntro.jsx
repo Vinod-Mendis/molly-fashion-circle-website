@@ -3,6 +3,8 @@
 import React from "react";
 import new_arrivals_img_3 from "../../../../public/Images/home-page/new_arrivals-img_3.png";
 import Image from "next/image";
+import full_star from "../../../../public/Images/product-view/full_star.png";
+import half_star from "../../../../public/Images/product-view/half_star.png";
 
 export default function ProductIntro() {
   return (
@@ -20,7 +22,28 @@ export default function ProductIntro() {
         {/* Details left */}
 
         <div className="mt-2">
-          <h1>Pink Dye Dress</h1>
+          {/* Initial Details */}
+          <div className="flex gap-4">
+            <h1>Pink Dye Dress</h1>
+            <div className="flex gap-2 ml-5">
+              {[...Array(5)].map((_, index) => (
+                <Image
+                  key={index}
+                  src={index < 4 ? full_star : half_star}
+                  alt="star"
+                  width={20}
+                  height={20}
+                />
+              ))}
+            </div>
+            <p className="">(4.5 stars) | 56 reviews</p>
+          </div>
+          {/* Size and color */}
+          <div className="flex">
+            {/* Size */}
+            <div className=""></div>
+            {/* Color */}
+          </div>
         </div>
       </div>
       {/* right */}
