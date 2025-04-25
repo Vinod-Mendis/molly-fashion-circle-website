@@ -13,14 +13,19 @@ const buttonVariants = cva(
       variant: {
         default:
           "bg-[#AF803C] text-white shadow-xs hover:bg-[#AF803C]/80 hover:scale-95 cursor-pointer",
+        filterDefault:
+          "bg-white border-1 border-white text-white shadow-xs hover:bg-[#AF803C]/80 hover:scale-95 cursor-pointer",
         addToCart:
           "bg-black text-white shadow-xs hover:bg-black/80 cursor-pointer",
-        cart:
-          "bg-white text-black shadow-xs hover:shadow-xl  hover:scale-95 cursor-pointer",
+        cart: "bg-white text-black shadow-xs hover:shadow-xl  hover:scale-95 cursor-pointer",
         destructive:
           "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
         outline:
           "border-2 border-[#AF803C] bg-white shadow-xs hover:bg-[#AF803C] text-[#AF803C] hover:text-white dark:bg-input/30 dark:border-input dark:hover:bg-input/50 cursor-pointer hover:scale-95",
+        filterOutline:
+          "border-1 border-gray-200 bg-white shadow-xs hover:bg-gray-200 text-gray-800 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 cursor-pointer",
+        clearFilter:
+          "border-1 border-gray-200 bg-white shadow-xs hover:bg-black hover:text-white text-gray-800 dark:bg-input/30 dark:border-input dark:hover:bg-input/50 cursor-pointer active:scale-95",
         secondary:
           "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
         ghost:

@@ -4,6 +4,9 @@
 import ProductCard from "@/app/components/store/ProductCard";
 import React, { useState } from "react";
 import ProductThumbail from "../../../../public/Images/home-page/new_arrivals-img_1.png";
+import ProductsFilter from "@/app/components/store/ProductsFilter";
+import BannerSection from "@/app/components/store/BannerSection";
+import banner_image from "../../../../public/Images/store/banner_image.png";
 
 export default function Store() {
   const [productsData, setProductsData] = useState({
@@ -17,11 +20,13 @@ export default function Store() {
   return (
     <div className="flex flex-col gap-10">
       {/* Banner Header  */}
-      <div className="w-full bg-red-400 h-[50vh] rounded-b-3xl"></div>
+      <BannerSection category="womens" />
 
-      <div className="max-w-7xl mx-auto flex flex-col w-full gap-10">
+      <div className="max-w-7xl px-4 mx-auto flex flex-col w-full gap-10">
         {/* Filter panel */}
-        <div className="w-full bg-green-200 h-20">Filter</div>
+        <div className="w-full">
+          <ProductsFilter />
+        </div>
 
         {/* All/Filtered Products */}
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
