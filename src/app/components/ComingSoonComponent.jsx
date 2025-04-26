@@ -4,9 +4,9 @@ import FloatingDots from "@/app/components/coming-soon/FloatingDots";
 import Image from "next/image";
 import React from "react";
 
-export default function page() {
+export default function ComingSoonComponent() {
   return (
-    <main className="h-screen w-full flex flex-col items-center justify-center p-4 bg-white bg-grid-pattern relative overflow-hidden">
+    <main className="h-[100svh] w-full flex flex-col items-center justify-center p-4 bg-white bg-grid-pattern relative overflow-hidden">
       {/* Top left shadow blob */}
       <Image
         src="/images/coming-soon/shadow_blob.png"
@@ -14,7 +14,7 @@ export default function page() {
         width={800}
         height={800}
         className="absolute -top-50 -left-50 md:-top-100 md:-left-100"
-        priority
+        
       />
       {/* Bottom right shadow blob */}
       <Image
@@ -23,7 +23,7 @@ export default function page() {
         width={800}
         height={800}
         className="absolute -bottom-50 -right-50 md:-bottom-100 md:-right-100 scale-150 opacity-80"
-        priority
+        
       />
 
       <div className="max-w-xl w-full flex flex-col items-center text-center z-10">
@@ -36,7 +36,7 @@ export default function page() {
             width={200}
             height={200}
             className="w-40 sm:w-60"
-            priority
+            
           />
         </div>
 
