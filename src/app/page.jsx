@@ -9,7 +9,7 @@ import TimeDeals from "./components/home/TimeDeals";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen gap-20  overflow-hidden">
-      <div className="fixed w-full h-screen z-50">
+      <div className="absolute w-full min-h-screen z-50 overflow-hidden">
         <ComingSoonComponent />
       </div>
       {/* <Hero />
