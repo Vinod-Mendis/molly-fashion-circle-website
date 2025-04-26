@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Addressblock from "./Addressblock";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-//  AddressDisplay component for mobile view
+
 function MobileAddressDisplay({ no, street, town }) {
   return (
     <div className="flex flex-col items-center justify-center py-4">
@@ -87,15 +87,26 @@ export default function LocationSection() {
         <div>
           <div className="flex flex-col items-center px-4">
             {/* Branch Selector */}
-            <div className="bg-gray-200 rounded-full p-1 flex justify-between w-full">
+            <div className="relative flex items-center justify-between bg-gray-200 rounded-full p-0.5 w-full">
+              {/* Sliding Indicator */}
+              <div
+                className={`absolute h-8 bg-white rounded-full shadow-md transition-all duration-300 z-10`}
+                style={{
+                  width: `${100 / branches.length}%`,
+                  left: `${(activeBranch - 1) * (100 / branches.length)}%`,
+                  transform: "translateX(1px)",
+                }}
+              ></div>
+
+              {/* Tabs */}
               {branches.map((branch) => (
                 <button
                   key={branch.id}
                   onClick={() => handleBranchChange(branch.id)}
-                  className={`py-2 px-4 text-sm rounded-full transition-all duration-300 ${
+                  className={`py-2 text-sm font-medium z-20 flex-1 text-center transition-colors duration-300 ${
                     activeBranch === branch.id
-                      ? "bg-white text-[#2671F7]"
-                      : "text-gray-600"
+                      ? "text-[#2671F7]"
+                      : "text-gray-600 opacity-70"
                   }`}
                 >
                   Branch {branch.branchNumber}
@@ -104,7 +115,7 @@ export default function LocationSection() {
             </div>
 
             {/* First Vertical Divider */}
-            <div className="h-18 mt-2 border-l border-gray-300"></div>
+            <div className="h-16 mt-2 border-l border-gray-300"></div>
 
             {/* Address Display */}
             <MobileAddressDisplay
@@ -114,11 +125,11 @@ export default function LocationSection() {
             />
 
             {/* Second Vertical Divider */}
-            <div className="h-18 border-l mb-2 border-gray-300"></div>
+            <div className="h-16 border-l mb-2 border-gray-300"></div>
 
             {/* Map Display */}
             <div className="w-full">
-              <div className="h-[400px] rounded-lg overflow-hidden border shadow-md">
+              <div className="h-96 rounded-lg overflow-hidden border shadow-md">
                 <iframe
                   src={currentMapUrl}
                   width="100%"
@@ -134,7 +145,7 @@ export default function LocationSection() {
           </div>
         </div>
       ) : (
-        /* Desktop View  */
+        /* Desktop View */
         <div className="flex flex-col gap-8">
           {/* Address Section */}
           <div className="flex flex-col md:flex-row justify-between w-full gap-4">
