@@ -12,10 +12,10 @@ export default function Home() {
       <div className="fixed w-full h-screen z-50">
         <ComingSoonComponent />
       </div>
-      <Hero />
+      {/* <Hero />
       <StylesSection />
       <LatestArrivals />
-      <TimeDeals />
+      <TimeDeals /> */}
     </div>
   );
 }
