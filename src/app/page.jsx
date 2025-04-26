@@ -8,10 +8,8 @@ import TimeDeals from "./components/home/TimeDeals";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen gap-20  overflow-hidden">
-      <div className="absolute w-full min-h-screen z-50 overflow-hidden">
+    <div className="flex flex-col h-[100svh] gap-20 overflow-hidden">
         <ComingSoonComponent />
-      </div>
       {/* <Hero />
       <StylesSection />
       <LatestArrivals />
