@@ -20,12 +20,24 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-gradient-to-b from-white to-white/0 py-4">
+    <nav className="fixed top-0 z-[100] w-full bg-gradient-to-b from-white to-white/0 py-4">
       <div className="max-w-7xl mx-auto container px-4">
         {/* Mobile*/}
         <div className="flex justify-between items-center lg:hidden px-4">
+          {/* Hamburger Menu */}
+          <button
+            className="p-1 text-gray-700 hover:text-[#AC8537]"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+
           {/* Logo */}
-          <div className="flex-1 flex justify-start">
+          <div className="flex-1 flex justify-center">
             <Link href="/" className="flex items-center">
               <Image
                 src={navbar_molly_logo}
@@ -50,9 +62,27 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Desktop View */}
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-white absolute top-16 left-0 right-0 z-[101] shadow-lg border-t">
+            <div className="flex flex-col py-4 px-6 space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="py-2 text-gray-800 hover:text-[#AC8537] border-b border-gray-100"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Desktop View  */}
         <div className="hidden lg:flex justify-between items-center">
-          {/* Logo - Left Section */}
+          {/* Logo  */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
@@ -64,7 +94,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Navigation Items - Middle Section */}
+          {/* Navigation Items  */}
           <div className="flex items-center justify-center space-x-1">
             {navLinks.map((link) => (
               <Link
