@@ -29,8 +29,10 @@ export default function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <SmoothScrollWrapper>
-            <Navbar />
-            <main className="mb-20">{children}</main>
+            <header className="relative w-screen lg:max-w-7xl mx-auto z-50">
+              {/* <Navbar /> */}
+            </header>
+            <main className="">{children}</main>
             <Footer />
           </SmoothScrollWrapper>
         </body>

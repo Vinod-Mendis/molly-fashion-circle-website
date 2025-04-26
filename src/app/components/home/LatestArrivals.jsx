@@ -92,15 +92,15 @@ export default function LatestArrivals() {
       <div className="mb-10">
         {/* H2 in the center with line to the left */}
         <div className="flex items-center justify-center w-full space-x-4 mb-2">
-          <hr className="border-[#655656] flex-grow " />
-          <h2 className="text-5xl flex font-medium text-[#655656] whitespace-nowrap">
+          <hr className="border-[#655656] flex-grow hidden md:block" />
+          <h2 className="text-3xl text-center md:text-5xl flex font-medium text-[#655656] md:whitespace-nowrap">
             MEET OUR LATEST ARRIVALS
           </h2>
-          <hr className="opacity-0 flex-grow " />
+          <hr className="opacity-0 flex-grow hidden md:block" />
         </div>
 
         {/* P with text-right and width control for multiple lines */}
-        <div className="flex items-center justify-center w-full mt-4 space-x-4">
+        <div className="hidden md:flex items-center justify-center w-full mt-4 space-x-4">
           <hr className="w-[50%] opacity-0" />
           <p className="text-justify uppercase leading-tight text-sm max-w-md">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
@@ -112,7 +112,7 @@ export default function LatestArrivals() {
       </div>
 
       {/* Products Grid */}
-      <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="hidden md:grid mt-10 grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
           <div
             key={product.id}
