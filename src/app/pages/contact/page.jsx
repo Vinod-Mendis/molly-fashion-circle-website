@@ -6,7 +6,7 @@ import LocationSection from "../../components/contact-us/LocationSection";
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative px-4 lg:px-0">
       <Image
         src="/images/contact-us-page/Ellipse 8.png"
         alt="Form background shadow"

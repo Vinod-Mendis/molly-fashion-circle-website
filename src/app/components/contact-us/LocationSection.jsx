@@ -1,7 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Addressblock from "./Addressblock";
+import { FaMapMarkerAlt } from "react-icons/fa";
+
+//  AddressDisplay component for mobile view
+function MobileAddressDisplay({ no, street, town }) {
+  return (
+    <div className="flex flex-col items-center justify-center py-4">
+      <div className="mb-3">
+        <FaMapMarkerAlt className="text-gray-400 text-2xl" />
+      </div>
+      <div className="text-center">
+        <p className="font-semibold text-xl">
+          {no}, {street},
+        </p>
+        <p className="font-semibold text-xl">{town}, Sri Lanka</p>
+      </div>
+    </div>
+  );
+}
 
 export default function LocationSection() {
   const branches = [
@@ -35,44 +53,124 @@ export default function LocationSection() {
   ];
 
   const [currentMapUrl, setCurrentMapUrl] = useState(branches[0].mapUrl);
+  const [activeBranch, setActiveBranch] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile();
+
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  const handleBranchChange = (id) => {
+    setActiveBranch(id);
+    const branch = branches.find((branch) => branch.id === id);
+    setCurrentMapUrl(branch.mapUrl);
+  };
+
+  const activeBranchData = branches.find(
+    (branch) => branch.id === activeBranch
+  );
 
   return (
     <div className="max-w-7xl mx-auto container mt-4">
-      <div className="flex flex-col gap-8">
-        {/* Address Section */}
-        <div className="flex flex-col md:flex-row justify-between w-full gap-4">
-          {branches.map((branch) => (
-            <div
-              key={branch.id}
-              className="cursor-pointer"
-              onMouseEnter={() => setCurrentMapUrl(branch.mapUrl)}
-            >
-              <Addressblock
-                branchNumber={branch.branchNumber}
-                no={branch.no}
-                street={branch.street}
-                town={branch.town}
-              />
+      {/* Mobile View */}
+      {isMobile ? (
+        <div>
+          <div className="flex flex-col items-center px-4">
+            {/* Branch Selector */}
+            <div className="bg-gray-200 rounded-full p-1 flex justify-between w-full">
+              {branches.map((branch) => (
+                <button
+                  key={branch.id}
+                  onClick={() => handleBranchChange(branch.id)}
+                  className={`py-2 px-4 text-sm rounded-full transition-all duration-300 ${
+                    activeBranch === branch.id
+                      ? "bg-white text-[#2671F7]"
+                      : "text-gray-600"
+                  }`}
+                >
+                  Branch {branch.branchNumber}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
 
-        {/* Map Section */}
-        <div className="w-full">
-          <div className="h-[500px] rounded-lg overflow-hidden border shadow-md">
-            <iframe
-              src={currentMapUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-            ></iframe>
+            {/* First Vertical Divider */}
+            <div className="h-18 mt-2 border-l border-gray-300"></div>
+
+            {/* Address Display */}
+            <MobileAddressDisplay
+              no={activeBranchData.no}
+              street={activeBranchData.street}
+              town={activeBranchData.town}
+            />
+
+            {/* Second Vertical Divider */}
+            <div className="h-18 border-l mb-2 border-gray-300"></div>
+
+            {/* Map Display */}
+            <div className="w-full">
+              <div className="h-[400px] rounded-lg overflow-hidden border shadow-md">
+                <iframe
+                  src={currentMapUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        /* Desktop View  */
+        <div className="flex flex-col gap-8">
+          {/* Address Section */}
+          <div className="flex flex-col md:flex-row justify-between w-full gap-4">
+            {branches.map((branch) => (
+              <div
+                key={branch.id}
+                className="cursor-pointer"
+                onMouseEnter={() => setCurrentMapUrl(branch.mapUrl)}
+              >
+                <Addressblock
+                  branchNumber={branch.branchNumber}
+                  no={branch.no}
+                  street={branch.street}
+                  town={branch.town}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Map Section */}
+          <div className="w-full">
+            <div className="h-[500px] rounded-lg overflow-hidden border shadow-md">
+              <iframe
+                src={currentMapUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
