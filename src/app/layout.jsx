@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
             <header className="relative w-screen lg:max-w-7xl mx-auto z-50">
               {/* <Navbar /> */}
             </header>
-            <main className="mb-20">{children}</main>
+            <main className="">{children}</main>
             <Footer />
           </SmoothScrollWrapper>
         </body>

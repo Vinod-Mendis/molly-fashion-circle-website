@@ -1,4 +1,5 @@
 /** @format */
+"use client";
 
 import Image from "next/image";
 import { Link } from "next-view-transitions";
@@ -7,10 +8,27 @@ import { IoLogoFacebook } from "react-icons/io";
 import Marquee from "react-fast-marquee";
 import footer_payment_methods from "../../../public/Images/nav-and-footer/footer-payment_methods.png";
 import footer_molly_logo from "../../../public/Images/nav-and-footer/footer-molly_logo.png";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [shouldRender, setShouldRender] = useState(true);
+
+  useEffect(() => {
+    // Check if the current URL contains /pages/coming-soon
+    const currentUrl = window.location.href;
+    if (currentUrl.includes("/pages/coming-soon")) {
+      setShouldRender(false);
+    } else {
+      setShouldRender(true);
+    }
+  }, []);
+
+  // Return null if on the coming-soon page
+  if (!shouldRender) {
+    return null;
+  }
   return (
-    <footer className="bg-[#AC8537] rounded-t-4xl">
+    <footer className="bg-[#AC8537] rounded-t-4xl mt-20">
       <div className="max-w-7xl mx-auto container h-[350] pt-5 md:px-4">
         <div className="h-[30%] flex">
           <div className="w-[20%]  items-center flex border-r-white border-r border-b border-b-white">
