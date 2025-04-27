@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Addressblock from "./Addressblock";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
+import Image from "next/image";
 
 function MobileAddressDisplay({ no, street, town }) {
   return (
@@ -81,16 +81,26 @@ export default function LocationSection() {
   );
 
   return (
-    <div className="max-w-7xl mx-auto container mt-4">
+    <div className="max-w-7xl mx-auto container mt-4 relative overflow-y-hidden">
+      {/* shadow blob */}
+      <Image
+        src="/images/contact-us-page/Ellipse 8.png"
+        alt="Form background shadow"
+        width={250}
+        height={300}
+        className="absolute bottom-50 right-10 left-10 rotate-90 block lg:hidden z-0"
+        priority
+      />
+
       {/* Mobile View */}
       {isMobile ? (
-        <div>
+        <div className="relative z-10">
           <div className="flex flex-col items-center px-4">
             {/* Branch Selector */}
             <div className="relative flex items-center justify-between bg-gray-200 rounded-full p-0.5 w-full">
               {/* Sliding Indicator */}
               <div
-                className={`absolute h-8 bg-white rounded-full shadow-md transition-all duration-300 z-10`}
+                className="absolute h-8 bg-white rounded-full shadow-md transition-all duration-300 z-10"
                 style={{
                   width: `${100 / branches.length}%`,
                   left: `${(activeBranch - 1) * (100 / branches.length)}%`,
@@ -146,7 +156,7 @@ export default function LocationSection() {
         </div>
       ) : (
         /* Desktop View */
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 relative z-10">
           {/* Address Section */}
           <div className="flex flex-col md:flex-row justify-between w-full gap-4">
             {branches.map((branch) => (
