@@ -1,6 +1,7 @@
 /** @format */
 
 import ComingSoonComponent from "./components/ComingSoonComponent";
+import CategorySection from "./components/home/CategorySection";
 import Hero from "./components/home/Hero";
 import LatestArrivals from "./components/home/LatestArrivals";
 import StylesSection from "./components/home/StylesSection";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <StylesSection />
       <LatestArrivals />
+      <CategorySection/>
       <TimeDeals />
     </div>
   );
