@@ -29,7 +29,15 @@ export default function Page() {
         alt="Form background shadow"
         width={500}
         height={500}
-        className="absolute bottom-50 right-0"
+        className="absolute bottom-50 right-0 hidden lg:block"
+      />
+
+      <Image
+        src="/images/contact-us-page/Ellipse 8.png"
+        alt="Form background shadow"
+        width={300}
+        height={400}
+        className="absolute bottom-70 right-10 rotate-90 block lg:hidden"
       />
       <ContactUsHero />
       <div className="relative z-50">
