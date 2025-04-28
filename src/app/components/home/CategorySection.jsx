@@ -1,26 +1,69 @@
 /** @format */
+"use client";
 
-import React from "react";
 import { ThreeDCardDemo } from "./ThreeDCardDemo";
+import Image from "next/image";
+import menuStar from "../../../../public/Images/home-page/menu_star.png";
+import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
 
 export default function CategorySection() {
+  const [selectedCategory, setSelectedCategory] = useState("Men");
+  console.log("Selected Category:", selectedCategory);
+
+  const categories = [
+    { name: "Men", link: "/" },
+    { name: "Women", link: "/" },
+    { name: "Kids", link: "/" },
+    { name: "HOME & LIFE STYLE", link: "/" },
+  ];
   return (
-    <div className="max-w-7xl w-full mx-auto px-4 flex flex-col gap-10 bg-yellow-100">
-        {/* title */}
-      <div className="flex justify-between gap-4 items-center w-full bg-blue-300">
-        <p className="text-justify uppercase leading-tight text-sm max-w-3xs">
+    <div className="max-w-7xl w-full mx-auto px-4 flex flex-col gap-10 relative pb-80">
+      <div className="pt-12 h-full w-16 absolute -z-10 hidden lg:block">
+        <div className="h-full w-px bg-black flex mx-auto"></div>
+      </div>
+      {/* title */}
+      <div className="flex justify-between gap-4 items-start w-full">
+        <p className="hidden sm:block text-justify uppercase leading-tight text-sm max-w-3xs pl-16">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
           consequuntur tenetur consequatur, explicabo in blanditiis molestias
-          dolor impedit distinctio temporibus natus.
+          dolor impedit distinctio
         </p>
-        <h2 className="text-3xl text-center md:text-5xl flex font-medium uppercase text-[#655656] md:whitespace-nowrap">
-          fashion for everyone
-        </h2>
-        <hr className="border-[#655656] w-[20%] hidden md:block" />
+        <div className="w-full flex gap-4 items-center">
+          <h2 className="text-3xl text-center md:text-5xl flex font-medium uppercase text-[#655656] md:whitespace-nowrap">
+            fashion for everyone
+          </h2>
+          <hr className="border-[#655656] flex-grow hidden md:block" />
+        </div>
+      </div>
+      {/* Category Menu - left side */}
+      <div className="hidden lg:flex flex-col gap-4 mt-56 max-w-4xl">
+        {categories.map((_, index) => (
+          <div
+            key={index}
+            className="flex items-center gap-4 group cursor-pointer"
+            onMouseEnter={() => setSelectedCategory(categories[index].name)}>
+            <div className="relative w-16 h-16">
+              {categories[index].name === selectedCategory && (
+                <Image
+                  src={menuStar}
+                  fill
+                  alt="menu-star"
+                  className=" bg-white p-2"
+                />
+              )}
+            </div>
+            <p className="text-5xl uppercase whitespace-nowrap">
+              {categories[index].name}
+            </p>
+            <ArrowUpRight className="h-14 w-14 text-gray-100 group-hover:text-black font-bold group-hover:rotate-45 transition" />
+            <hr className="flex-grow border-[#AF803C]" />
+          </div>
+        ))}
       </div>
       {/* 3d card - right side */}
-      <div className="bg-green-200 w-full flex justify-end">
-        <ThreeDCardDemo/>
+      <div className="absolute hidden lg:block right-0">
+        <ThreeDCardDemo />
       </div>
     </div>
   );
