@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { Search, ShoppingBag, ChevronDown, Menu, X } from "lucide-react";
+
 import { Button } from "../components/ui/button";
 import navbar_molly_logo from "../../../public/Images/nav-and-footer/navbar-molly_logo.png";
 
@@ -20,6 +21,7 @@ const Navbar = () => {
   ];
 
   return (
+
     <nav className="fixed top-0 z-[100] w-full bg-gradient-to-b from-white to-white/0 py-4">
       <div className="max-w-7xl mx-auto container px-4">
         {/* Mobile*/}
@@ -83,41 +85,43 @@ const Navbar = () => {
         {/* Desktop View  */}
         <div className="hidden lg:flex justify-between items-center">
           {/* Logo  */}
+
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
                 src={navbar_molly_logo}
                 alt="logo"
                 height={40}
-                width={168}
+                width={140}
+                className="max-w-[120px] sm:max-w-full"
               />
             </Link>
           </div>
 
+
           {/* Navigation Items  */}
           <div className="flex items-center justify-center space-x-1">
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+
                 className="py-2 px-3 hover:text-[#AC8537]"
               >
+
                 {link.label}
               </Link>
             ))}
           </div>
 
+
           <div className="flex items-center justify-center space-x-4">
+
             {/* Search Icon */}
             <button className="p-1 text-gray-700 hover:text-[#AC8537]">
               <Search className="h-5 w-5" />
             </button>
-
-            {/* Language Selector */}
-            <div className="flex items-center text-gray-700">
-              <span className="text-sm">US</span>
-              <ChevronDown className="h-4 w-4 ml-1" />
-            </div>
 
             {/* Shopping Bag */}
             <Link
@@ -127,10 +131,32 @@ const Navbar = () => {
               <ShoppingBag className="h-5 w-5" />
             </Link>
 
-            {/* Login Button */}
-            <Button>Login</Button>
+            {/* Login Button - Hide on smallest screens */}
+            <Button className="hidden sm:flex text-xs sm:text-sm">Login</Button>
+
+            {/* Mobile Menu Button - Only show on mobile */}
+            <button
+              className="p-1 lg:hidden text-gray-700 hover:text-[#AC8537]"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              <Menu className="h-6 w-6" />
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu - Only visible when open */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden mt-4 py-2 bg-white rounded-md shadow-lg">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block py-2 px-4 hover:bg-gray-100 hover:text-[#AC8537]"
+                onClick={() => setMobileMenuOpen(false)}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );

@@ -16,6 +16,7 @@
     "lenis": "^1.2.3",
     "lucide-react": "^0.479.0",
     "molly": "file:",
+    "motion": "^12.9.2",
     "next": "15.2.2",
     "next-view-transitions": "^0.3.4",
     "react": "^19.0.0",
