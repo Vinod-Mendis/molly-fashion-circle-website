@@ -1,12 +1,11 @@
-/** @format */
-
 "use client";
 
+import { useState } from "react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
-import { Search, ShoppingBag, Menu } from "lucide-react";
+import { Search, ShoppingBag, ChevronDown, Menu, X } from "lucide-react";
+
 import { Button } from "../components/ui/button";
-import { useState } from "react";
 import navbar_molly_logo from "../../../public/Images/nav-and-footer/navbar-molly_logo.png";
 
 const Navbar = () => {
@@ -22,10 +21,71 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-gradient-to-b from-white to-white/0 py-4">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center">
-          {/* Logo - Left Section */}
+
+    <nav className="fixed top-0 z-[100] w-full bg-gradient-to-b from-white to-white/0 py-4">
+      <div className="max-w-7xl mx-auto container px-4">
+        {/* Mobile*/}
+        <div className="flex justify-between items-center lg:hidden px-4">
+          {/* Hamburger Menu */}
+          <button
+            className="p-1 text-gray-700 hover:text-[#AC8537]"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+
+          {/* Logo */}
+          <div className="flex-1 flex justify-center">
+            <Link href="/" className="flex items-center">
+              <Image
+                src={navbar_molly_logo}
+                alt="logo"
+                height={30}
+                width={120}
+              />
+            </Link>
+          </div>
+
+          {/* Search and Cart Icons  */}
+          <div className="flex items-center space-x-2">
+            <button className="p-1 text-gray-700 hover:text-[#AC8537]">
+              <Search className="h-5 w-5" />
+            </button>
+            <Link
+              href="/cart"
+              className="p-1 text-gray-700 hover:text-[#AC8537] relative"
+            >
+              <ShoppingBag className="h-5 w-5" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-white absolute top-16 left-0 right-0 z-[101] shadow-lg border-t">
+            <div className="flex flex-col py-4 px-6 space-y-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="py-2 text-gray-800 hover:text-[#AC8537] border-b border-gray-100"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Desktop View  */}
+        <div className="hidden lg:flex justify-between items-center">
+          {/* Logo  */}
+
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
@@ -38,20 +98,26 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Navigation Items - Middle Section (Desktop only) */}
-          <div className="hidden lg:flex items-center justify-center space-x-1">
+
+          {/* Navigation Items  */}
+          <div className="flex items-center justify-center space-x-1">
+
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="py-2 px-2 text-sm lg:text-base hover:text-[#AC8537]">
+
+                className="py-2 px-3 hover:text-[#AC8537]"
+              >
+
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Right Section - Search, Cart, Login */}
-          <div className="flex items-center space-x-2 sm:space-x-4">
+
+          <div className="flex items-center justify-center space-x-4">
+
             {/* Search Icon */}
             <button className="p-1 text-gray-700 hover:text-[#AC8537]">
               <Search className="h-5 w-5" />
@@ -60,7 +126,8 @@ const Navbar = () => {
             {/* Shopping Bag */}
             <Link
               href="/cart"
-              className="p-1 text-gray-700 hover:text-[#AC8537] relative">
+              className="p-1 text-gray-700 hover:text-[#AC8537] relative"
+            >
               <ShoppingBag className="h-5 w-5" />
             </Link>
 
