@@ -1,15 +1,9 @@
-/** @format */
-
 import Image from "next/image";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { Card, CardContent } from "../ui/card";
-import femaleModel from "../../../../public/images/contact-us-page/model-2.png";
-import phoneIcon from "../../../../public/images/contact-us-page/phone.png";
-import emailIcon from "../../../../public/images/contact-us-page/email.png";
-import faxIcon from "../../../../public/images/contact-us-page/fax.png";
 
 export default function ContactUsHero() {
   return (
@@ -17,7 +11,7 @@ export default function ContactUsHero() {
       {/* Model image positioned at the top right */}
       <div className="absolute top-24 right-0 w-[45%] h-full z-20 hidden lg:block">
         <Image
-          src={femaleModel}
+          src="/images/contact-us-page/model-2.png"
           alt="Fashion model"
           height={550}
           width={450}
@@ -27,7 +21,6 @@ export default function ContactUsHero() {
             top: "0",
             right: "0",
           }}
-          priority
         />
       </div>
 
@@ -64,7 +57,12 @@ export default function ContactUsHero() {
             {/* Phone section */}
             <div className="flex relative">
               <div className="absolute -left-8">
-                <Image src={phoneIcon} alt="phone" height={20} width={20} />
+                <Image
+                  src="/images/contact-us-page/phone.png"
+                  alt="phone"
+                  height={20}
+                  width={20}
+                />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">
@@ -83,7 +81,12 @@ export default function ContactUsHero() {
             {/* Email section */}
             <div className="flex relative">
               <div className="absolute -left-8">
-                <Image src={emailIcon} alt="email" height={20} width={20} />
+                <Image
+                  src="/images/contact-us-page/email.png"
+                  alt="email"
+                  height={20}
+                  width={20}
+                />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">
@@ -101,7 +104,12 @@ export default function ContactUsHero() {
             {/* Fax section */}
             <div className="flex relative">
               <div className="absolute -left-8">
-                <Image src={faxIcon} alt="fax" height={22} width={22} />
+                <Image
+                  src="/images/contact-us-page/fax.png"
+                  alt="fax"
+                  height={22}
+                  width={22}
+                />
               </div>
               <div>
                 <div className="uppercase text-xs text-[#A27D2A] mb-1">FAX</div>
@@ -123,7 +131,8 @@ export default function ContactUsHero() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="name"
-                        className="text-xs uppercase font-medium">
+                        className="text-xs uppercase font-medium"
+                      >
                         NAME
                       </Label>
                       <Input
@@ -136,7 +145,8 @@ export default function ContactUsHero() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="email"
-                        className="text-xs uppercase font-medium">
+                        className="text-xs uppercase font-medium"
+                      >
                         EMAIL
                       </Label>
                       <Input
@@ -149,7 +159,8 @@ export default function ContactUsHero() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="phone"
-                        className="text-xs uppercase font-medium">
+                        className="text-xs uppercase font-medium"
+                      >
                         PHONE NUMBER
                       </Label>
                       <Input
@@ -162,7 +173,8 @@ export default function ContactUsHero() {
                     <div className="space-y-2">
                       <Label
                         htmlFor="message"
-                        className="text-xs uppercase font-medium">
+                        className="text-xs uppercase font-medium"
+                      >
                         MESSAGE
                       </Label>
                       <Textarea

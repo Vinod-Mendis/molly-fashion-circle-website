@@ -3,13 +3,12 @@
 import Image from "next/image";
 import ContactUsHero from "../../components/contact-us/ContactUsHero";
 import LocationSection from "../../components/contact-us/LocationSection";
-import ellipse from '../../../../public/images/contact-us-page/Ellipse 8.png'
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen relative px-4 lg:px-0 mb-20">
+    <div className="flex flex-col min-h-screen relative px-4 lg:px-0">
       <Image
-        src={ellipse}
+        src="/images/contact-us-page/Ellipse 8.png"
         alt="Form background shadow"
         width={800}
         height={800}
@@ -17,7 +16,7 @@ export default function Page() {
       />
 
       <Image
-        src={ellipse}
+        src="/images/contact-us-page/Ellipse 8.png"
         alt="Form background shadow"
         width={600}
         height={600}
@@ -26,7 +25,7 @@ export default function Page() {
       />
 
       <Image
-        src={ellipse}
+        src="/images/contact-us-page/Ellipse 8.png"
         alt="Form background shadow"
         width={500}
         height={500}
