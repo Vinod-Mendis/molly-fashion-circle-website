@@ -3,7 +3,7 @@
 import Image from "next/image";
 import ContactUsHero from "../../components/contact-us/ContactUsHero";
 import LocationSection from "../../components/contact-us/LocationSection";
-import ellipse from '../../../../public//images/contact-us-page/Ellipse 8.png'
+import ellipse from '../../../../public/images/contact-us-page/Ellipse 8.png'
 
 export default function Page() {
   return (

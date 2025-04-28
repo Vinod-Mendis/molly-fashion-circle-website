@@ -6,10 +6,10 @@ import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
 import { Label } from "../ui/label";
 import { Card, CardContent } from "../ui/card";
-import femaleModel from "../../../../public//images/contact-us-page/model-2.png";
-import phoneIcon from "../../../../public//images/contact-us-page/phone.png";
-import emailIcon from "../../../../public//images/contact-us-page/email.png";
-import faxIcon from "../../../../public//images/contact-us-page/fax.png";
+import femaleModel from "../../../../public/images/contact-us-page/model-2.png";
+import phoneIcon from "../../../../public/images/contact-us-page/phone.png";
+import emailIcon from "../../../../public/images/contact-us-page/email.png";
+import faxIcon from "../../../../public/images/contact-us-page/fax.png";
 
 export default function ContactUsHero() {
   return (
