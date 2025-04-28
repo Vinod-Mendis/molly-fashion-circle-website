@@ -10,6 +10,7 @@ import new_arrivals_img_4 from "../../../../public/Images/home-page/new_arrivals
 import new_arrivals_img_3 from "../../../../public/Images/home-page/new_arrivals-img_3.png";
 import new_arrivals_img_2 from "../../../../public/Images/home-page/new_arrivals-img_2.png";
 import new_arrivals_img_1 from "../../../../public/Images/home-page/new_arrivals-img_1.png";
+import ProductCarousel from "./ProductCarousel";
 
 const products = [
   {
@@ -85,7 +86,11 @@ const products = [
   },
 ];
 
+
+
+
 export default function LatestArrivals() {
+  
   return (
     <div className="mx-auto max-w-7xl container py-12 md:px-4">
       {/* Heading Section */}
@@ -110,6 +115,12 @@ export default function LatestArrivals() {
           <hr className="flex-grow border-[#AF803C]" />
         </div>
       </div>
+      <div className="flex md:hidden justify-center items-center my-8">
+        <Button variant="outline">Shop all</Button>
+      </div>
+
+      {/* mobile carousel */}
+      <ProductCarousel/>
 
       {/* Products Grid */}
       <div className="hidden md:grid mt-10 grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -173,7 +184,7 @@ export default function LatestArrivals() {
           </div>
         ))}
       </div>
-      <div className="justify-center flex items-center mt-12">
+      <div className="hidden md:flex justify-center items-center mt-12">
         <Button variant="outline">View all</Button>
       </div>
     </div>
