@@ -89,7 +89,7 @@ export default function CategorySection() {
       {/* Mobile view */}
       <div className="grid lg:hidden grid-cols-1 md:grid-cols-2">
         {categories.map((_, index) => (
-          <div className="h-[30rem] relative flex justify-center items-center active:opacity-80">
+          <div key={index} className="h-[30rem] relative flex justify-center items-center active:opacity-80">
             <Image
               src={categories[index].images[0]}
               fill
