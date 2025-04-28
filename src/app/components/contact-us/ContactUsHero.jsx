@@ -7,9 +7,9 @@ import { Card, CardContent } from "../ui/card";
 
 export default function ContactUsHero() {
   return (
-    <div className="mx-auto max-w-7xl container md:px-4 relative z-40">
+    <div className="mx-auto max-w-7xl container px-4 relative z-40">
       {/* Model image positioned at the top right */}
-      <div className="absolute top-24 right-0 w-[45%] h-full z-20">
+      <div className="absolute top-24 right-0 w-[45%] h-full z-20 hidden lg:block">
         <Image
           src="/images/contact-us-page/model-2.png"
           alt="Fashion model"
@@ -26,24 +26,30 @@ export default function ContactUsHero() {
       </div>
 
       {/* Heading */}
-      <div className="flex flex-row mt-32 relative z-10">
-        <div className="w-[40%]">
-          <h1 className="uppercase text-7xl">contact us</h1>
+      <div className="flex flex-row lg:mt-32 mt-20 relative z-10">
+        <div className="w-full lg:w-[40%]">
+          <h1 className="uppercase text-4xl sm:text-5xl lg:text-7xl">
+            contact us
+          </h1>
         </div>
-        <div className="flex w-[60%] items-center">
+        <div className="hidden lg:flex w-[60%] items-center">
           <hr className="border-[#888888] border-1 w-full relative z-10" />
         </div>
       </div>
 
       {/* Content and form */}
       <div className="flex">
-        <div className="w-[60%] relative z-10">
+        <div className="w-full lg:w-[60%] relative z-10">
           {/* content-para*/}
-          <div className="mt-2 w-[80%]">
-            <p className="uppercase text-xs max-w-md text-[#888888]">
+          <div className="mt-2 lg:w-[80%] w-full">
+            <p className="uppercase hidden lg:block text-xs max-w-md text-[#888888]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam
+            </p>
+            <p className="uppercase block lg:hidden text-xs max-w-md text-[#888888]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod
             </p>
           </div>
 
@@ -114,64 +120,80 @@ export default function ContactUsHero() {
             </div>
           </div>
 
-          {/* Question section */}
+          {/* Question section  */}
           <div className="mt-20 pb-16">
-            <h2 className="text-5xl">Got Style Questions?</h2>
-            <h2 className="text-5xl mb-6">Drop Us a Hello!</h2>
+            <h2 className="text-3xl lg:text-5xl">Got Style Questions?</h2>
+            <h2 className="text-3xl lg:text-5xl mb-6">Drop Us a Hello!</h2>
 
-            <Card className="max-w-md mt-16 border-0 shadow-none">
-              <CardContent className="p-0 space-y-6">
-                <form className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-xs uppercase">
-                      Name
-                    </Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      className="bg-gray-100 border-2 border-gray-200"
-                    />
-                  </div>
+            <div className="lg:mt-16 mt-10">
+              <Card className="max-w-md border-0 lg:shadow-none">
+                <CardContent className="p-0 space-y-6">
+                  <form className="space-y-4">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="name"
+                        className="text-xs uppercase font-medium"
+                      >
+                        NAME
+                      </Label>
+                      <Input
+                        id="name"
+                        type="text"
+                        className="bg-gray-100 border-2"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-xs uppercase">
-                      Email
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      className="bg-gray-100 border-2 border-gray-200"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="email"
+                        className="text-xs uppercase font-medium"
+                      >
+                        EMAIL
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        className="bg-gray-100 border-2"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-xs uppercase">
-                      Phone Number
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      className="bg-gray-100 border-2 border-gray-200"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="phone"
+                        className="text-xs uppercase font-medium"
+                      >
+                        PHONE NUMBER
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        className="bg-gray-100 border-2"
+                      />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-xs uppercase">
-                      Message
-                    </Label>
-                    <Textarea
-                      id="message"
-                      className="bg-gray-100 border-2 border-gray-200 h-32"
-                    />
-                  </div>
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="message"
+                        className="text-xs uppercase font-medium"
+                      >
+                        MESSAGE
+                      </Label>
+                      <Textarea
+                        id="message"
+                        className="bg-gray-100 border-2 h-32"
+                      />
+                    </div>
 
-                  <Button>Send</Button>
-                  <div className="relative">
-                    <div className="absolute left-10 h-24 border-l border-[#DDDDDD]"></div>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
+                    <Button>Send</Button>
+
+                    {/* Vertical line only on desktop */}
+                    <div className="relative hidden lg:block">
+                      <div className="absolute left-10 h-24 border-l border-[#DDDDDD]"></div>
+                    </div>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

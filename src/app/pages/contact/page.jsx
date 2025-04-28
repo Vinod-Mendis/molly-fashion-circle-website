@@ -6,7 +6,7 @@ import LocationSection from "../../components/contact-us/LocationSection";
 
 export default function Page() {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative px-4 lg:px-0">
       <Image
         src="/images/contact-us-page/Ellipse 8.png"
         alt="Form background shadow"
@@ -29,8 +29,9 @@ export default function Page() {
         alt="Form background shadow"
         width={500}
         height={500}
-        className="absolute bottom-50 right-0"
+        className="absolute bottom-50 right-0 hidden lg:block"
       />
+
       <ContactUsHero />
       <div className="relative z-50">
         <LocationSection />
