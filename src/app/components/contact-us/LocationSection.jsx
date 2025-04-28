@@ -88,7 +88,7 @@ export default function LocationSection() {
         alt="Form background shadow"
         width={250}
         height={300}
-        className="absolute bottom-50 right-10 left-10 rotate-90 block lg:hidden z-0"
+        className="absolute bottom-50 left-0 right-0 mx-auto rotate-90 block lg:hidden z-0 "
         priority
       />
 
