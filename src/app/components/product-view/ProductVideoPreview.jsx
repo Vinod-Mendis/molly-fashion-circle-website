@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ProductVideoPreview() {
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="max-w-7xl hidden md:block mx-auto px-4">
       <div className="h-[80vh]​ w-full flex justify-center items-center relative rounded-md overflow-hidden ">
         <video
           autoPlay
