@@ -21,7 +21,6 @@ export default function ContactUsHero() {
             top: "0",
             right: "0",
           }}
-          priority
         />
       </div>
 

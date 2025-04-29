@@ -1,6 +1,8 @@
+/** @format */
+
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
 import { Search, ShoppingBag, ChevronDown, Menu, X } from "lucide-react";
@@ -10,6 +12,41 @@ import navbar_molly_logo from "../../../public/Images/nav-and-footer/navbar-moll
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  console.log(lastScrollY);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY === 0) {
+        setIsVisible(true);
+      }
+
+      if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const navLinks = [
     { href: "/", label: "HOME" },
@@ -21,16 +58,21 @@ const Navbar = () => {
   ];
 
   return (
-
-    <nav className="fixed top-0 z-[100] w-full bg-gradient-to-b from-white to-white/0 py-4">
+    <nav
+      className={`fixed top-0 h-20 lg:h-32 z-[100] w-full ${
+        mobileMenuOpen
+          ? "bg-white"
+          : "bg-gradient-to-b from-white via-white via-20% to-white/0"
+      }  py-4 ${
+        isVisible ? "transform-none" : "-translate-y-full"
+      } transition-transform duration-300 ease-in-out`}>
       <div className="max-w-7xl mx-auto container px-4">
         {/* Mobile*/}
         <div className="flex justify-between items-center lg:hidden px-4">
           {/* Hamburger Menu */}
           <button
             className="p-1 text-gray-700 hover:text-[#AC8537]"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
@@ -57,8 +99,7 @@ const Navbar = () => {
             </button>
             <Link
               href="/cart"
-              className="p-1 text-gray-700 hover:text-[#AC8537] relative"
-            >
+              className="p-1 text-gray-700 hover:text-[#AC8537] relative">
               <ShoppingBag className="h-5 w-5" />
             </Link>
           </div>
@@ -66,15 +107,17 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white absolute top-16 left-0 right-0 z-[101] shadow-lg border-t">
+          <div
+            className={`lg:hidden bg-white absolute top-16 left-0 right-0 z-[101] shadow-lg border-t ${
+              isVisible ? "transform-none" : "-translate-y-full"
+            } transition-transform duration-300 ease-in-out`}>
             <div className="flex flex-col py-4 px-6 space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className="py-2 text-gray-800 hover:text-[#AC8537] border-b border-gray-100"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
+                  onClick={() => setMobileMenuOpen(false)}>
                   {link.label}
                 </Link>
               ))}
@@ -98,26 +141,19 @@ const Navbar = () => {
             </Link>
           </div>
 
-
           {/* Navigation Items  */}
           <div className="flex items-center justify-center space-x-1">
-
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-
-                className="py-2 px-3 hover:text-[#AC8537]"
-              >
-
+                className="py-2 px-3 hover:text-[#AC8537]">
                 {link.label}
               </Link>
             ))}
           </div>
 
-
           <div className="flex items-center justify-center space-x-4">
-
             {/* Search Icon */}
             <button className="p-1 text-gray-700 hover:text-[#AC8537]">
               <Search className="h-5 w-5" />
@@ -126,8 +162,7 @@ const Navbar = () => {
             {/* Shopping Bag */}
             <Link
               href="/cart"
-              className="p-1 text-gray-700 hover:text-[#AC8537] relative"
-            >
+              className="p-1 text-gray-700 hover:text-[#AC8537] relative">
               <ShoppingBag className="h-5 w-5" />
             </Link>
 
@@ -144,7 +179,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu - Only visible when open */}
-        {mobileMenuOpen && (
+        {/* {mobileMenuOpen && (
           <div className="lg:hidden mt-4 py-2 bg-white rounded-md shadow-lg">
             {navLinks.map((link) => (
               <Link
@@ -156,7 +191,7 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </nav>
   );
