@@ -3,7 +3,7 @@
 
 import ProductCard from "@/app/components/store/ProductCard";
 import React, { useState } from "react";
-import ProductThumbail from "../../../../public/Images/home-page/new_arrivals-img_1.png";
+import ProductThumbail from "../../../../public/Images/home-page/new_arrivals-img_5.png";
 import ProductsFilter from "@/app/components/store/ProductsFilter";
 import BannerSection from "@/app/components/store/BannerSection";
 import banner_image from "../../../../public/Images/store/banner_image.png";
@@ -18,7 +18,7 @@ export default function Store() {
     currency: "LKR",
   });
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 mb-20">
       {/* Banner Header  */}
       <BannerSection category="womens" />
 
@@ -29,7 +29,7 @@ export default function Store() {
         </div>
 
         {/* All/Filtered Products */}
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-10">
           {[...Array(10)].map((_, index) => (
             <ProductCard
               key={index}

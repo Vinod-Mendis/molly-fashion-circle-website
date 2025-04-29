@@ -63,7 +63,7 @@ export default function ProductFilter() {
   return (
     <div className="w-full max-w-7xl mx-auto">
       {/* Mobile Filter Button */}
-      <div className="md:hidden mb-4">
+      <div className="md:hidden ">
         <Button
           variant="clearFilter"
           className="w-full flex justify-between items-center active:scale-100 active:opacity-70"
@@ -82,7 +82,7 @@ export default function ProductFilter() {
 
       {/* Mobile Accordion Filters with smooth animation */}
       <div
-        className={`md:hidden border rounded-md mb-4 divide-y overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`md:hidden border rounded-md divide-y overflow-hidden transition-all duration-300 ease-in-out ${
           mobileFilterOpen
             ? "max-h-[1000px] opacity-100"
             : "max-h-0 opacity-0 border-0"
@@ -224,7 +224,7 @@ export default function ProductFilter() {
       <div
         className={`md:hidden flex justify-end transition-all duration-300 ease-in-out ${
           mobileFilterOpen
-            ? "opacity-100 max-h-[50px]"
+            ? "opacity-100 max-h-[50px] mt-4"
             : "opacity-0 max-h-0 overflow-hidden"
         }`}>
         <Button

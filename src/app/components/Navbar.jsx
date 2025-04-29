@@ -14,7 +14,6 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-  console.log(lastScrollY);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
