@@ -1,3 +1,5 @@
+/** @format */
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -84,7 +86,7 @@ export default function LocationSection() {
     <div className="max-w-7xl mx-auto container mt-4 relative overflow-y-hidden">
       {/* shadow blob */}
       <Image
-        src="/images/contact-us-page/Ellipse 8.png"
+        src="https://res.cloudinary.com/vccpsacloud/image/upload/v1745920804/Ellipse_8_o819io.png"
         alt="Form background shadow"
         width={250}
         height={300}
@@ -105,8 +107,7 @@ export default function LocationSection() {
                   width: `${100 / branches.length}%`,
                   left: `${(activeBranch - 1) * (100 / branches.length)}%`,
                   transform: "translateX(1px)",
-                }}
-              ></div>
+                }}></div>
 
               {/* Tabs */}
               {branches.map((branch) => (
@@ -117,8 +118,7 @@ export default function LocationSection() {
                     activeBranch === branch.id
                       ? "text-[#2671F7]"
                       : "text-gray-600 opacity-70"
-                  }`}
-                >
+                  }`}>
                   Branch {branch.branchNumber}
                 </button>
               ))}
@@ -148,8 +148,7 @@ export default function LocationSection() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                ></iframe>
+                  className="w-full h-full"></iframe>
               </div>
             </div>
           </div>
@@ -163,8 +162,7 @@ export default function LocationSection() {
               <div
                 key={branch.id}
                 className="cursor-pointer"
-                onMouseEnter={() => setCurrentMapUrl(branch.mapUrl)}
-              >
+                onMouseEnter={() => setCurrentMapUrl(branch.mapUrl)}>
                 <Addressblock
                   branchNumber={branch.branchNumber}
                   no={branch.no}
@@ -186,8 +184,7 @@ export default function LocationSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-              ></iframe>
+                className="w-full h-full"></iframe>
             </div>
           </div>
         </div>
