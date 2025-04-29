@@ -61,19 +61,19 @@ const Footer = () => {
               incididunt ut labore et dolore magna{" "}
             </p>
             <p className="text-xs block">aliqua. Ut enim ad minim veniam.</p>
-            <div className="mt-14">
+            <div className="mt-14 w-fit ">
               <Link
                 href="/"
-                className="text-white hover:text-[#201b11] flex items-center gap-3"
+                className="text-white hover:text-[#201b11] transition flex items-center gap-3"
               >
                 <RiInstagramFill className="h-6 w-6" />
                 <p className="text-xs">INSTAGRAM</p>
               </Link>
             </div>
-            <div className="mt-2">
+            <div className="mt-4 w-fit ">
               <Link
                 href="/"
-                className="text-white hover:text-[#201b11] flex items-center gap-3"
+                className="text-white hover:text-[#201b11] transition flex items-center gap-3"
               >
                 <IoLogoFacebook className="h-6 w-6" />
                 <p className="text-xs">FACEBOOK</p>
@@ -139,7 +139,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media */}
-        <div className="w-full flex justify-center space-x-6 my-4">
+        <div className="flex justify-center space-x-6 my-4">
           <Link href="/" className="text-white hover:text-[#201b11]">
             <RiInstagramFill className="h-8 w-8" />
           </Link>
