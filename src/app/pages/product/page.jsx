@@ -11,9 +11,9 @@ import RelevantProducts from "@/app/components/product-view/RelevantProducts";
 
 export default function page() {
   return (
-    <div className="mt-20 flex flex-col gap-20">
+    <div className="mt-20 flex flex-col gap-20 mb-20">
       <ProductIntro />
-      <div className="grid md:grid-cols-5 gap-8 w-full max-w-7xl mx-auto px-4">
+      <div className="grid md:grid-cols-5 gap-20 md:gap-8 w-full max-w-7xl mx-auto px-4">
         <ProductRatings />
         <ProductDetails />
       </div>

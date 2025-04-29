@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function ProductViewSeperator() {
   return (
-    <div className="w-full bg-[#F3EBE0] py-10">
+    <div className="w-full hidden md:block bg-[#F3EBE0] py-10">
       <div className="max-w-7xl px-4 mx-auto flex justify-between">
         <p className="w-lg uppercase text-4xl flex flex-wrap">
           Step into style with{" "}
